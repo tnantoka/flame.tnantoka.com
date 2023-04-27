@@ -1,0 +1,20 @@
+---
+import * as fs from 'node:fs';
+import { Code } from 'astro/components';
+
+export interface Props {
+  example: string;
+  label: string;
+}
+
+const { example, label } = Astro.props;
+let code = fs.readFileSync(`./examples/${example}.dart`, 'utf8');
+if (label) {
+  code = code
+    .replace(new RegExp(`[\\s\\S]*<${label}>.*$`, 'm'), '')
+    .replace(new RegExp(`^.*</${label}>[\\s\\S]*`, 'm'), '')
+    .trim();
+}
+---
+
+<Code code={code} lang="dart" />
