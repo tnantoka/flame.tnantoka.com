@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import ExampleLayout from '../../layouts/ExampleLayout.astro';
+
+export async function getStaticPaths() {
+  const exampleEntries = await getCollection('examples');
+  return exampleEntries.map((entry) => ({
+    params: { example: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { example } = Astro.params;
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<ExampleLayout title={entry.data.title}>
+  <Content />
+</ExampleLayout>

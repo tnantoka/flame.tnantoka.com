@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from './Layout.astro';
+
+const { example } = Astro.params;
+const exampleEntries = await getCollection('examples');
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col-2 border-end">
+        <div class="list-group">
+          {
+            exampleEntries.map((entry) => (
+              <a
+                href={`/examples/${entry.slug}`}
+                class={`list-group-item list-group-item-action ${
+                  entry.slug === example ? 'active' : ''
+                }`}
+              >
+                {entry.data.title}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+      <div class="col-5">
+        <slot />
+      </div>
+      <div class="col-5 bg-light">preview</div>
+    </div>
+  </div>
+</Layout>
