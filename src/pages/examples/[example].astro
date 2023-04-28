@@ -17,4 +17,7 @@ const { Content } = await entry.render();
 
 <ExampleLayout title={entry.data.title}>
   <Content />
+  <ul>
+    {[...new Array(30)].map(() => <li>dummy</li>)}
+  </ul>
 </ExampleLayout>

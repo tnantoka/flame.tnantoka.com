@@ -10,26 +10,91 @@ const { title } = Astro.props;
 <Layout title={title}>
   <div class="container-fluid h-100">
     <div class="row h-100">
-      <div class="col-2 border-end">
-        <div class="list-group">
-          {
-            exampleEntries.map((entry) => (
-              <a
-                href={`/examples/${entry.slug}`}
-                class={`list-group-item list-group-item-action ${
-                  entry.slug === example ? 'active' : ''
-                }`}
+      <div class="col-2">
+        <div
+          class="position-fixed d-flex flex-column h-100 start-0 w-inherit p-inherit"
+        >
+          <a
+            href="/"
+            class="font-dot d-flex align-items-center text-decoration-none text-reset mt-3 ms-3"
+          >
+            <img src="/logo.gif" class="h-12" />
+            <img src="/logo.png" class="h-12" />
+            <div class="ms-2">
+              <span class="fs-2 d-block lh-1">Flame</span>
+              <span class="small d-block lh-1 text-muted mt-1"
+                >.tnantoka.com</span
               >
-                {entry.data.title}
-              </a>
-            ))
-          }
+            </div>
+          </a>
+
+          <div class="mt-3">
+            <input
+              type="search"
+              class="form-control form-control-sm"
+              placeholder="Search"
+            />
+          </div>
+
+          <div class="list-group flex-fill overflow-auto mt-1 rounded-0 small">
+            {
+              exampleEntries.map((entry) => (
+                <a
+                  href={`/examples/${entry.slug}`}
+                  class={`list-group-item list-group-item-action border-0 ${
+                    entry.slug === example ? 'bg-secondary-subtle' : ''
+                  }`}
+                >
+                  {entry.data.title}
+                </a>
+              ))
+            }
+            {
+              [...new Array(15)].map(() => (
+                <a
+                  href="/"
+                  class="list-group-item list-group-item-action border-0"
+                >
+                  dummy
+                </a>
+              ))
+            }
+          </div>
+
+          <div class="bg-secondary-subtle py-5 mt-1">ad</div>
         </div>
       </div>
-      <div class="col-5">
+
+      <div class="col-6">
+        <h1 class="mt-2">{title}</h1>
         <slot />
       </div>
-      <div class="col-5 bg-light">preview</div>
+
+      <div class="col-4">
+        <div
+          class="bg-secondary-subtle d-flex justify-content-center align-items-center position-fixed h-100 w-inherit p-inherit"
+        >
+          <div class="h-75 w-auto ratio ratio-3x4 bg-white">hoge</div>
+        </div>
+      </div>
     </div>
   </div>
 </Layout>
+
+<style lang="scss">
+  a {
+    img[src$='logo.gif'] {
+      display: none;
+    }
+
+    &:hover {
+      img[src$='logo.gif'] {
+        display: inline;
+      }
+
+      img[src$='logo.png'] {
+        display: none;
+      }
+    }
+  }
+</style>

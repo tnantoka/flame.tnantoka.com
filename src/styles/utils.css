@@ -1,0 +1,19 @@
+.font-dot {
+  font-family: 'DotGothic16', sans-serif;
+}
+
+.ratio.ratio-3x4 {
+  aspect-ratio: 3 / 4;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
+.w-inherit {
+  width: inherit;
+}
+
+.p-inherit {
+  padding: inherit;
+}
