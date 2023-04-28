@@ -1,0 +1,71 @@
+---
+const { exampleName, exampleEntries } = Astro.props;
+---
+
+<div
+  class="position-fixed d-flex flex-column h-100 start-0 w-inherit p-inherit"
+>
+  <a
+    href="/"
+    class="font-dot d-flex align-items-center text-decoration-none text-reset mt-3 ms-3"
+  >
+    <img src="/logo.gif" class="h-12" />
+    <img src="/logo.png" class="h-12" />
+    <div class="ms-2">
+      <span class="fs-2 d-block lh-1">Flame</span>
+      <span class="small d-block lh-1 text-muted mt-1">.tnantoka.com</span>
+    </div>
+  </a>
+
+  <div class="mt-3">
+    <input
+      type="search"
+      class="form-control form-control-sm"
+      placeholder="Search"
+    />
+  </div>
+
+  <div class="list-group flex-fill overflow-auto mt-1 rounded-0 small">
+    {
+      exampleEntries
+        .sort((a, b) => a.data.id - b.data.id)
+        .map((entry) => (
+          <a
+            href={`/examples/${entry.slug}`}
+            class={`list-group-item list-group-item-action border-0 ${
+              entry.slug === exampleName ? 'bg-secondary-subtle' : ''
+            }`}
+          >
+            {entry.data.title}
+          </a>
+        ))
+    }
+    {
+      [...new Array(15)].map(() => (
+        <a href="/" class="list-group-item list-group-item-action border-0">
+          dummy
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="bg-secondary-subtle py-5 mt-1">ad</div>
+</div>
+
+<style lang="scss">
+  a {
+    img[src$='logo.gif'] {
+      display: none;
+    }
+
+    &:hover {
+      img[src$='logo.gif'] {
+        display: inline;
+      }
+
+      img[src$='logo.png'] {
+        display: none;
+      }
+    }
+  }
+</style>

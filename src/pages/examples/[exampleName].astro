@@ -5,12 +5,12 @@ import ExampleLayout from '../../layouts/ExampleLayout.astro';
 export async function getStaticPaths() {
   const exampleEntries = await getCollection('examples');
   return exampleEntries.map((entry) => ({
-    params: { example: entry.slug },
+    params: { exampleName: entry.slug },
     props: { entry },
   }));
 }
 
-const { example } = Astro.params;
+const { exampleName } = Astro.params;
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
