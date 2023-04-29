@@ -1,0 +1,76 @@
+---
+title: Hello World
+id: 1
+date: 2023-05-01
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+Flame で何もない画面を動かすところまでです。
+
+公式ドキュメントのチュートリアルにも同様の内容があります。  
+https://docs.flame-engine.org/latest/tutorials/bare_flame_game.html
+
+## Flutter 導入
+
+Flutter の導入手順はたくさん日本語情報があるので割愛します。  
+[公式ドキュメント](https://flutter.dev/docs/get-started/install)も丁寧です。
+
+個人的には以下の手順がおすすめです。
+
+1. Xcode を入れてシミュレーターで何か動かす
+2. Android Studio を入れてエミュレーターで何か動かす
+3. Flutter を入れる
+
+Flutter に詳しくなくても Flame をとりあえず使うことはできるので（僕もそう）、  
+ひとまず[Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)をやる程度で OK だと思います。
+
+## Flame 導入
+
+`dependencies`に`flame`を追加して、`pub get`するだけです。  
+なお、[pub.dev](https://pub.dev/packages/flame)から`flame: ^1.7.3`という文字列がコピーできます。
+
+<ExampleCode file="pubspec.yaml" label="hello" dir="examples" lang="yaml" />
+
+## GameWidget
+
+Flame のゲームは Flutter の Widget になっています。
+以下のように使います。
+
+渡している`game`は次で説明する`FlameGame`です。
+
+```
+GameWidget(game: game)
+```
+
+`game`以外の引数は API リファレンスに載っています。`overlayBuilderMap`はよく使うと思います。  
+https://pub.dev/documentation/flame/latest/game/GameWidget-class.html
+
+## FlameGame
+
+`FlameGame`がゲームの実態です。
+これを継承してゲームを作っていきます。
+
+今回は何もしないのでただ継承するだけです。
+
+<ExampleCode file="hello/game.dart" />
+
+API リファレンスはこちらです。  
+https://pub.dev/documentation/flame/latest/game/FlameGame-class.html
+
+## 動かす
+
+先程作った`HelloGame`を`GameWidget`に渡して動かします。
+
+<ExampleCode file="hello/page.dart" />
+
+```
+$ flutter run
+```
+
+これで動きました。
+右の Live Demo エリアに表示されています。
+
+真っ黒なのでわかりづらいですが…。
+
+[Rect](/examples/rect#rect)では四角形を描画するのでもう少し Live Demo 感があります。

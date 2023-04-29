@@ -1,5 +1,6 @@
 ---
 const { exampleName, exampleEntries } = Astro.props;
+const isProd = import.meta.env.PROD;
 ---
 
 <div
@@ -38,20 +39,38 @@ const { exampleName, exampleEntries } = Astro.props;
           </a>
         ))
     }
-    {
-      [...new Array(15)].map((_, i) => (
-        <a
-          href="/"
-          class="list-group-item list-group-item-action border-0"
-          id={`item${i}`}
-        >
-          dummy
-        </a>
-      ))
-    }
   </div>
 
-  <div class="bg-secondary-subtle py-5 mt-1">ad</div>
+  <div class="mt-1 mb-2 text-center small ad">
+    Flameを扱っている<br />（たぶん）唯一の日本語商業本
+    {
+      isProd ? (
+        <>
+          <a
+            href="https://www.amazon.co.jp/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E5%AF%BE%E5%BF%9C-%E6%9C%80%E6%96%B0%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF-Flutter-3%E5%85%A5%E9%96%80-%E6%8E%8C%E7%94%B0%E6%B4%A5%E8%80%B6%E4%B9%83/dp/4798068527?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=3BJEKEFODRUJX&keywords=flutter+flame&qid=1682766119&s=books&sprefix=flutter+flam%2Cstripbooks%2C192&sr=1-1&linkCode=li3&tag=flutter-flame-22&linkId=e0bcfe1cb03210824b843b1e041eefac&language=ja_JP&ref_=as_li_ss_il"
+            target="_blank"
+          >
+            <img
+              border="0"
+              src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4798068527&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=flutter-flame-22&language=ja_JP"
+            />
+          </a>
+          <img
+            src="https://ir-jp.amazon-adsystem.com/e/ir?t=flutter-flame-22&language=ja_JP&l=li3&o=9&a=4798068527"
+            width="1"
+            height="1"
+            border="0"
+            alt=""
+            style="border:none !important; margin:0px !important;"
+          />
+        </>
+      ) : (
+        <a href="#">
+          <img width="194" height="250" class="bg-secondary-subtle" />
+        </a>
+      )
+    }
+  </div>
 </div>
 
 <style lang="scss">
@@ -68,6 +87,13 @@ const { exampleName, exampleEntries } = Astro.props;
       img[src$='logo.png'] {
         display: none;
       }
+    }
+  }
+
+  .ad {
+    img {
+      max-width: 80%;
+      height: auto;
     }
   }
 </style>

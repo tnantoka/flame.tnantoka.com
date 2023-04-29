@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'examples/hello/page.dart';
 import 'examples/rect/page.dart';
 import 'examples/line/page.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
+        '/hello': (context) => HelloPage(),
         '/rect': (context) => RectPage(),
         '/line': (context) => LinePage(),
       },

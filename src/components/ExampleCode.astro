@@ -4,11 +4,17 @@ import { Code } from 'astro/components';
 
 export interface Props {
   dir?: string;
+  lang?: string;
   file: string;
   label: string;
 }
 
-const { file, label, dir = 'examples/lib/examples' } = Astro.props;
+const {
+  file,
+  label,
+  dir = 'examples/lib/examples',
+  lang = 'dart',
+} = Astro.props;
 const path = `flutter/${dir}/${file}`;
 let code = fs.readFileSync(path, 'utf8');
 if (label) {
@@ -30,4 +36,4 @@ if (label) {
     <i class="bi-box-arrow-up-right"></i>
   </a>
 </div>
-<Code code={code} lang="dart" />
+<Code code={code} lang={lang} />
