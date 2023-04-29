@@ -69,3 +69,20 @@ const { exampleName, exampleEntries } = Astro.props;
     }
   }
 </style>
+
+<script>
+  const search = document.querySelector('input[type=search]');
+  const items = document.querySelectorAll('.list-group a');
+
+  search.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase();
+    items.forEach((item) => {
+      const text = item.textContent.toLowerCase().trim();
+      if (text && text.includes(value)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+</script>

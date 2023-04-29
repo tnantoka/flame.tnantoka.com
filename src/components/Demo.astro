@@ -9,8 +9,10 @@ const host = import.meta.env.PROD
   class="bg-secondary-subtle d-flex justify-content-center align-items-center position-fixed h-100 w-inherit p-inherit"
 >
   <div class="h-75 w-auto ratio ratio-3x4 bg-black">
-    {!!exampleName && (
-      <iframe class="h-100 w-100" src={`${host}#/${exampleName}`}></iframe>
-    )}
+    {
+      !!exampleName && (
+        <iframe class="h-100 w-100" src={`${host}#/${exampleName}`} />
+      )
+    }
   </div>
 </div>
