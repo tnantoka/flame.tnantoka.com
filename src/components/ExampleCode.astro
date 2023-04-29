@@ -22,7 +22,12 @@ if (label) {
 <div class="bg-secondary-subtle px-3 py-1">
   <a
     href={`https://github.com/tnantoka/flame.tnantoka.com/tree/main/${path}`}
-    class="text-decoration-none text-reset">{file}</a
+    class="text-decoration-none text-reset icon-link"
+    target="_blank"
+    rel="noopener"
   >
+    {file}
+    <i class="bi-box-arrow-up-right"></i>
+  </a>
 </div>
 <Code code={code} lang="dart" />

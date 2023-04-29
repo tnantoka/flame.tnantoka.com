@@ -6,6 +6,10 @@
   aspect-ratio: 3 / 4;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-12 {
   height: 3rem;
 }
