@@ -58,7 +58,8 @@ const { title } = Astro.props;
           fill="currentColor"
           class="octo-body"></path></svg
       ></a
-    ><style>
+    >
+    <style>
       .github-corner:hover .octo-arm {
         animation: octocat-wave 560ms ease-in-out;
       }
@@ -85,15 +86,29 @@ const { title } = Astro.props;
         }
       }
     </style>
+
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    </script>
   </body>
 </html>
 
-<style is:global>
+<style is:global lang="scss">
   .astro-code {
     padding: 1rem;
   }
 
   h2 {
     margin-top: 1.5rem;
+  }
+
+  table {
+    margin-bottom: 1rem;
+
+    th,
+    td {
+      padding: 0.25rem 0.5rem;
+      border: 1px solid #dee2e6;
+    }
   }
 </style>

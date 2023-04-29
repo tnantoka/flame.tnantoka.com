@@ -21,7 +21,8 @@ if (label) {
   code = code
     .replace(new RegExp(`[\\s\\S]*<${label}>.*$`, 'm'), '')
     .replace(new RegExp(`^.*</${label}>[\\s\\S]*`, 'm'), '')
-    .trim();
+    .replace(/^[^\n]*\n/, '')
+    .replace(/[\s]*\n$/, '\n');
 }
 ---
 

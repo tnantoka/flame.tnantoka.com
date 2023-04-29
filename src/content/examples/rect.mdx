@@ -1,11 +1,51 @@
 ---
-title: Rect
+title: 四角形
 id: 2
 date: 2023-05-01
 ---
 
 import ExampleCode from '../../components/ExampleCode.astro';
+import Diagram from '../../components/Diagram.astro';
 
-rect
+## RectangleComponent
+
+ゲーム内の要素は`Component`を継承したクラスで表現されます。
+四角形を描画するには`RectangleComponent`を使います。
+（`Component`の子の`PositionComponent`の子です）
+
+<Diagram
+  code={`
+classDiagram
+  Component <|-- PositionComponent
+  PositionComponent <|-- RectangleComponent
+`}
+/>
+
+`PositionComponent`は多くの要素のベースになるもので、
+画面上に描画するのに必要な属性を持っています。
+
+| 属性     | 概要                                                 |
+| -------- | ---------------------------------------------------- |
+| position | 座標                                                 |
+| size     | 大きさ                                               |
+| scale    | スケール                                             |
+| angle    | 回転角度                                             |
+| anchor   | 描画の基準位置。デフォルトは左上（`Anchor.topLeft`） |
+
+`RectangleComponent`はこれらに加えて`paint`（デフォルトは白）を指定することで、任意の四角形を描画することができます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/components.html#rectanglecomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/geometry/RectangleComponent-class.html
+
+## 描画する
+
+`RectangleComponent`を使ってみます。
+
+`FlameGame`を継承したクラスの`onLoad`で`add`しています。
 
 <ExampleCode file="rect/game.dart" />
+
+これでグレーの四角形が 45 度回転した状態で画面中央に描画されます。

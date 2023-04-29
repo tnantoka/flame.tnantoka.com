@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'examples/hello/page.dart';
 import 'examples/rect/page.dart';
 import 'examples/line/page.dart';
+import 'examples/debug/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         '/hello': (context) => HelloPage(),
         '/rect': (context) => RectPage(),
         '/line': (context) => LinePage(),
+        '/debug': (context) => DebugPage(),
       },
     );
   }

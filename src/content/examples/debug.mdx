@@ -1,0 +1,30 @@
+---
+title: デバッグ表示
+id: 4
+date: 2023-05-02
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## debugMode
+
+`FlameGame`クラスの`debugMode`を`true`にすると、各コンポーネントの位置やサイズが描画されるようになります。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/game.html#debug-mode
+
+## FpsTextComponent
+
+`FpsTextComponent`を使うと現在の FPS を表示することができます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/other/debug.html
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/FpsTextComponent-class.html
+
+## 動かす
+
+`debugMode`と`FpsTextComponent`の使用例です。
+
+<ExampleCode file="debug/game.dart" label="debug" />
