@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+
+const exampleEntries = await getCollection('examples');
+---
+
+<ul>
+  {
+    exampleEntries
+      .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+      .map((entry) => (
+        <li>
+          <span class="font-monospace">
+            {entry.data.date.toLocaleDateString('sv-SE')}:
+          </span>
+          <a href={`/examples/${entry.slug}#${entry.slug}`}>
+            {entry.data.title}
+          </a>
+        </li>
+      ))
+  }
+</ul>

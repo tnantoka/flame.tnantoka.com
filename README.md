@@ -15,6 +15,10 @@ $ npm run dev
 
 - https://opengameart.org/content/fireflame
 
+## License
+
+MIT
+
 ## Author
 
 [@tnantoka](https://twitter.com/tnantoka)

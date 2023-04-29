@@ -10,7 +10,7 @@ const host = import.meta.env.PROD
 >
   <div class="h-75 w-auto ratio ratio-3x4 bg-black">
     {
-      !!exampleName && (
+      exampleName && (
         <iframe class="h-100 w-100" src={`${host}#/${exampleName}`} />
       )
     }

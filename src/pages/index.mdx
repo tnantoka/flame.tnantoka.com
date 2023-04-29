@@ -1,6 +1,34 @@
 ---
 title: ホーム
 ---
-import ExampleLayout from '../layouts/ExampleLayout.astro';
 
-<ExampleLayout title={frontmatter.title}>home</ExampleLayout>
+import ExampleLayout from '../layouts/ExampleLayout.astro';
+import News from '../components/News.astro';
+
+<ExampleLayout title={frontmatter.title}>
+
+[Flame](https://flame-engine.org/)は[Flutter](https://flutter.dev/)用のゲーム開発フレームワークです。
+
+他の有名どころとして[SpriteWidget](https://github.com/spritewidget/spritewidget)もありますが、
+もうアクティブに開発されていないようです。  
+（`spritewidget.com`も失効している模様）
+
+というわけで Flutter でゲームを作るなら Flame 一択みたいな状況なのですが、
+あまり日本語の情報がないので、サイトを作ってみました。  
+右カラムにある、[Flutter on the Web](https://flutter.dev/multi-platform/web)による Live Demo が特徴です。
+
+当面はひたすらサンプルコードをあげていこうと思います。
+
+サイトやサンプルのソースコードは全て[GitHub](https://github.com/tnantoka/flame.tnantoka.com)で公開しています。  
+バグ報告などは[Issues](https://github.com/tnantoka/flame.tnantoka.com/issues)からお気軽にどうぞ。  
+プルリクエストも歓迎です。
+
+## 新着
+
+<News />
+
+## 謝辞
+
+https://github.com/tnantoka/flame.tnantoka.com#acknowledgements
+
+</ExampleLayout>

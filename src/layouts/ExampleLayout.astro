@@ -6,6 +6,7 @@ import Demo from '../components/Demo.astro';
 
 const { exampleName } = Astro.params;
 const exampleEntries = await getCollection('examples');
+const entry = exampleEntries.find((entry) => entry.slug === exampleName);
 const { title } = Astro.props;
 const host = import.meta.env.PROD ? '/' : 'http://localhost:5555/';
 ---
@@ -19,7 +20,24 @@ const host = import.meta.env.PROD ? '/' : 'http://localhost:5555/';
 
       <div class="col-6">
         <h1 class="mt-3">{title}</h1>
-        <slot />
+        {
+          entry && (
+            <p class="small text-muted">
+              {entry.data.date.toLocaleDateString('sv-SE')}
+            </p>
+          )
+        }
+        <div class="mt-3">
+          <slot />
+        </div>
+        <p class="mt-3 small text-muted">
+          &copy; 2023 <a
+            href="https://twitter.com/tnantoka"
+            target="_blank"
+            rel="noopener"
+            class="text-decoration-none text-reset">tnantoka</a
+          >
+        </p>
       </div>
 
       <div class="col-4">
