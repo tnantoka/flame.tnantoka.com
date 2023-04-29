@@ -1,7 +1,7 @@
 ---
-const { exampleName } = Astro.props;
+const { exampleName, app = 'examples' } = Astro.props;
 const host = import.meta.env.PROD
-  ? '/flutter/examples/'
+  ? `/flutter/${app}/`
   : 'http://localhost:5555/';
 ---
 
@@ -9,6 +9,8 @@ const host = import.meta.env.PROD
   class="bg-secondary-subtle d-flex justify-content-center align-items-center position-fixed h-100 w-inherit p-inherit"
 >
   <div class="h-75 w-auto ratio ratio-3x4 bg-black">
-    <iframe class="h-100 w-100" src={`${host}#/${exampleName}`}></iframe>
+    {!!exampleName && (
+      <iframe class="h-100 w-100" src={`${host}#/${exampleName}`}></iframe>
+    )}
   </div>
 </div>

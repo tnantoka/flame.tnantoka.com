@@ -3,13 +3,14 @@ import * as fs from 'node:fs';
 import { Code } from 'astro/components';
 
 export interface Props {
-  path: string;
+  dir?: string;
+  file: string;
   label: string;
 }
 
-const dir = 'flutter/examples/lib/examples/';
-const { path, label } = Astro.props;
-let code = fs.readFileSync(`${dir}${path}`, 'utf8');
+const { file, label, dir = 'examples/lib/examples' } = Astro.props;
+const path = `flutter/${dir}/${file}`;
+let code = fs.readFileSync(path, 'utf8');
 if (label) {
   code = code
     .replace(new RegExp(`[\\s\\S]*<${label}>.*$`, 'm'), '')
@@ -20,8 +21,8 @@ if (label) {
 
 <div class="bg-secondary-subtle px-3 py-1">
   <a
-    href={`https://github.com/tnantoka/flame.tnantoka.com/tree/main/${dir}${path}`}
-    class="text-decoration-none text-reset">{path}</a
+    href={`https://github.com/tnantoka/flame.tnantoka.com/tree/main/${path}`}
+    class="text-decoration-none text-reset">{file}</a
   >
 </div>
 <Code code={code} lang="dart" />
