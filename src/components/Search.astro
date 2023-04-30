@@ -1,0 +1,65 @@
+---
+import removeMd from 'remove-markdown';
+
+const stripMarkdown = (md) => {
+  return removeMd(md).replace(/import.*$/gm, '');
+};
+
+const { exampleEntries } = Astro.props;
+---
+
+<div class="modal fade" tabindex="-1" id="search">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-end">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="mt-2">
+          <input type="search" class="form-control" placeholder="Search" />
+        </div>
+        <div class="list-group flex-fill overflow-auto mt-2 small">
+          {
+            exampleEntries
+              .sort((a, b) => a.data.id - b.data.id)
+              .map((entry) => (
+                <a
+                  href={`/examples/${entry.slug}#${entry.slug}`}
+                  class="list-group-item list-group-item-action border-0"
+                >
+                  <div class="fs-4">{entry.data.title}</div>
+                  <div class="text-truncate">{stripMarkdown(entry.body)}</div>
+                </a>
+              ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const search = document.querySelector('input[type=search]');
+  const modal = document.querySelector('.modal');
+  const items = modal.querySelectorAll('.list-group a');
+
+  search.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase();
+    items.forEach((item) => {
+      const text = item.textContent.toLowerCase().trim();
+      if (text && text.includes(value)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+
+  modal.addEventListener('shown.bs.modal', () => {
+    search.focus();
+  });
+</script>

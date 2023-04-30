@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from './Layout.astro';
 import Nav from '../components/Nav.astro';
 import Demo from '../components/Demo.astro';
+import Search from '../components/Search.astro';
 
 const { exampleName } = Astro.params;
 const exampleEntries = await getCollection('examples');
@@ -45,4 +46,6 @@ const host = import.meta.env.PROD ? '/' : 'http://localhost:5555/';
       </div>
     </div>
   </div>
+
+  <Search exampleEntries={exampleEntries} />
 </Layout>

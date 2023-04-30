@@ -8,6 +8,7 @@ const exampleEntries = await getCollection('examples');
   {
     exampleEntries
       .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+      .slice(0, 5)
       .map((entry) => (
         <li>
           <span class="font-monospace">
