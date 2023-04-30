@@ -8,11 +8,16 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "textlint src/**/*.md*",
+    "lint:fix": "textlint --fix src/**/*.md*"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.0",
     "astro": "^2.3.1",
     "sass": "^1.62.1"
+  },
+  "devDependencies": {
+    "textlint-rule-preset-ja-technical-writing": "^7.0.0"
   }
 }
