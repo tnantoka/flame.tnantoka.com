@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "textlint src/**/*.md*",
     "lint:fix": "textlint --fix src/**/*.md*"
   },
