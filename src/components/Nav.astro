@@ -28,14 +28,14 @@ const isProd = import.meta.env.PROD;
     </div>
   </div>
 
-  <div class="list-group flex-fill overflow-auto mt-1 small">
+  <div class="list-group flex-fill overflow-auto mt-1 small rounded-0">
     {
       exampleEntries
         .sort((a, b) => a.data.id - b.data.id)
         .map((entry) => (
           <a
             href={`/examples/${entry.slug}#${entry.slug}`}
-            class={`list-group-item list-group-item-action border-0 ${
+            class={`list-group-item list-group-item-action border-0 rounded ${
               entry.slug === exampleName ? 'bg-secondary-subtle' : ''
             }`}
             id={entry.slug}
