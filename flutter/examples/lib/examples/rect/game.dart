@@ -10,7 +10,7 @@ class RectGame extends FlameGame {
     await add(
       RectangleComponent(
         position: Vector2(size.x * 0.5, size.y * 0.5),
-        size: Vector2(size.x * 0.2, size.x * 0.2),
+        size: Vector2.all(size.x * 0.2),
         angle: radians(45),
         anchor: Anchor.center,
         paint: BasicPalette.gray.paint(),

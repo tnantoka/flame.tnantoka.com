@@ -4,6 +4,9 @@ import 'examples/hello/page.dart';
 import 'examples/rect/page.dart';
 import 'examples/line/page.dart';
 import 'examples/debug/page.dart';
+import 'examples/circle/page.dart';
+import 'examples/move/page.dart';
+import 'examples/joystick/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +26,9 @@ class MyApp extends StatelessWidget {
         '/rect': (context) => RectPage(),
         '/line': (context) => LinePage(),
         '/debug': (context) => DebugPage(),
+        '/circle': (context) => CirclePage(),
+        '/move': (context) => MovePage(),
+        '/joystick': (context) => JoystickPage(),
       },
     );
   }

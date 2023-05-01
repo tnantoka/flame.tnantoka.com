@@ -1,0 +1,26 @@
+---
+title: 円
+id: 5
+date: 2023-05-02
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## CircleComponent
+
+円を表示するには`CircleComponent`を使います。  
+使い方は[四角形](/examples/rect#rect)とほぼ同じで、`size`の代わりに`radius`を指定します。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/components.html#circlecomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/geometry/CircleComponent-class.html
+
+## 描画する
+
+`CircleComponent`を使ってみます。
+
+<ExampleCode file="circle/game.dart" />
+
+これでグレーの円が画面中央に描画されます。

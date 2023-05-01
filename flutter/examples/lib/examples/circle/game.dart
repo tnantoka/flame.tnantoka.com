@@ -1,23 +1,18 @@
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
+import 'package:flame/palette.dart';
 
-class DebugGame extends FlameGame {
+class CircleGame extends FlameGame {
   @override
   Future<void> onLoad() async {
     super.onLoad();
 
-    // <debug>
-    debugMode = true;
-
     await add(
-      FpsTextComponent(),
-    );
-    // </debug>
-
-    await add(
-      RectangleComponent(
+      CircleComponent(
         position: Vector2(size.x * 0.5, size.y * 0.5),
-        size: Vector2.all(size.x * 0.1),
+        radius: size.x * 0.1,
+        anchor: Anchor.center,
+        paint: BasicPalette.gray.paint(),
       ),
     );
   }
