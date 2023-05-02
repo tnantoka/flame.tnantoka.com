@@ -7,6 +7,7 @@ import 'examples/debug/page.dart';
 import 'examples/circle/page.dart';
 import 'examples/move/page.dart';
 import 'examples/joystick/page.dart';
+import 'examples/text/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/circle': (context) => CirclePage(),
         '/move': (context) => MovePage(),
         '/joystick': (context) => JoystickPage(),
+        '/text': (context) => TextPage(),
       },
     );
   }

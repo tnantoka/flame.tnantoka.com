@@ -38,7 +38,7 @@ https://pub.dev/documentation/flame/latest/input/JoystickComponent-class.html
 後は`update`で値を読み取り、Rect の位置に反映させます。
 
 ここでは`delta`で得られる Vector2 をそのまま利用しています。  
-`delta`は傾きに応じた値（最大で ± ジョイスティックのサイズ）が返ってくるので、これを速度として使うと傾きによって動く速さが変わります。  
+`delta`は傾きに応じた値（0〜± ジョイスティックのサイズ）が返ってくるので、これを速度として使うと傾きによって動く速さが変わります。  
 それを避けたい場合は`delta`の値を見て処理するか、代わりに`direction`で取れる向きを使うなどの対応が必要になります。
 
 <ExampleCode file="joystick/game.dart" label="joystick4" />

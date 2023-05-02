@@ -17,18 +17,24 @@ const {
 } = Astro.props;
 const path = `flutter/${dir}/${file}`;
 let code = fs.readFileSync(path, 'utf8');
+let open = 0;
+let close = 0;
 if (label) {
+  const lines = code.split('\n');
+  open = lines.findIndex((l) => l.includes(`<${label}>`)) + 1;
+  close = lines.findIndex((l) => l.includes(`</${label}>`));
   code = code
     .replace(new RegExp(`[\\s\\S]*<${label}>.*$`, 'm'), '')
     .replace(new RegExp(`^.*</${label}>[\\s\\S]*`, 'm'), '')
     .replace(/^[^\n]*\n/, '')
     .replace(/[\s]*\n$/, '\n');
 }
+const hash = open > 0 ? `#L${open + 1}-L${close}` : '';
 ---
 
 <div class="bg-secondary-subtle px-3 py-1">
   <a
-    href={`https://github.com/tnantoka/flame.tnantoka.com/tree/main/${path}`}
+    href={`https://github.com/tnantoka/flame.tnantoka.com/tree/main/${path}${hash}`}
     class="text-decoration-none text-reset icon-link"
     target="_blank"
     rel="noopener"

@@ -1,0 +1,41 @@
+---
+title: テキスト
+id: 8
+date: 2023-05-03
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## TextComponent
+
+文字列を表示するには`TextComponent`を使います。
+
+`textRenderer`を設定することで、サイズや色やフォントを変更できます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/other_modules/oxygen/components.html#textcomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/TextComponent-class.html
+
+## 描画する
+
+それではやってみます。
+
+まずはフォントを用意します。
+（ここは Flame 特有のものではなく[普通の Flutter の手順](https://docs.flutter.dev/cookbook/design/fonts)です）
+
+今回は Google Fonts からダウンロードした[DotGothic16](https://fonts.google.com/specimen/DotGothic16)を使います。
+このフォントは日本語対応のドット絵風フォントで、ゲーム開発に重宝します。
+
+ダウンロードしたフォントは `assets/fonts/DotGothic16-Regular.ttf` に保存します。
+
+`pubspec.yml`にフォントを指定します。
+
+<ExampleCode file="pubspec.yaml" label="text" dir="examples" lang="yaml" />
+
+準備したフォントを指定して `TextComponent` を作ります。
+
+<ExampleCode file="text/game.dart" />
+
+これでテキストが表示されるようになりました。
