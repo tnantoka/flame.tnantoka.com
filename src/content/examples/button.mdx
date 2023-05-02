@@ -1,0 +1,44 @@
+---
+title: テキストボタン
+id: 9
+date: 2023-05-03
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## ButtonComponent
+
+テキストボタンを表示するには`ButtonComponent`を使います。
+
+`button`（普通の表示）と`buttonDown`（クリック中の表示）に任意の`PositionComponent`を指定できますが、
+ここでは[テキスト](/examples/text#text)を指定することで、テキストボタンにします。
+
+クリック時の処理は`onPressed`に指定します。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/inputs/other_inputs.html#buttoncomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/input/ButtonComponent-class.html
+
+## 動かす
+
+メンバーを用意します。
+ボタンが押された数を表示するために `_text`と`_count`を使います。
+
+<ExampleCode file="button/game.dart" label="button1" />
+
+`_text`を初期化して`add`します。
+
+<ExampleCode file="button/game.dart" label="button2" />
+
+`update`で`_count`を`_text`に反映します。
+
+<ExampleCode file="button/game.dart" label="button3" />
+
+主役のボタンです。
+クリック中は色を変えて、クリック時の処理ではカウントアップしています。
+
+<ExampleCode file="button/game.dart" label="button4" />
+
+これでボタンが動くようになりました。
