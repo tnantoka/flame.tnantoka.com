@@ -1,23 +1,31 @@
 ---
 import { getCollection } from 'astro:content';
 
-const exampleEntries = await getCollection('examples');
+const { limit = 0 } = Astro.props;
+let exampleEntries = (await getCollection('examples')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+if (limit) {
+  exampleEntries = exampleEntries.slice(0, limit);
+}
 ---
 
-<ul>
+<ul class="list-unstyled">
   {
-    exampleEntries
-      .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-      .slice(0, 5)
-      .map((entry) => (
-        <li>
-          <span class="font-monospace">
-            {entry.data.date.toLocaleDateString('sv-SE')}:
-          </span>
-          <a href={`/examples/${entry.slug}#${entry.slug}`}>
-            {entry.data.title}
-          </a>
-        </li>
-      ))
+    exampleEntries.map((entry) => (
+      <li>
+        <span class="font-monospace">
+          {entry.data.date.toLocaleDateString('sv-SE')}:
+        </span>
+        <a href={`/examples/${entry.slug}#${entry.slug}`}>{entry.data.title}</a>
+      </li>
+    ))
+  }
+  {
+    limit > 0 && (
+      <li>
+        <a href="/archive">もっと見る</a>
+      </li>
+    )
   }
 </ul>
