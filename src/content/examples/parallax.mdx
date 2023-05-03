@@ -1,0 +1,40 @@
+---
+title: パララックス
+id: 13
+date: 2023-05-03
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import DemoImage from '../../components/DemoImage.astro';
+
+## ParallaxComponent
+
+ゲームの種類によっては背景を自動的にスクロールさせたいことがあります。
+Flame にはそのための機能が組み込まれています。
+
+その名前の通り Flappy Bird のようにパララックスで奥行き効果を出すこともできます。
+（設定によってはただの自動スクロール背景にもできます）
+
+使い方は簡単で画像を用意して`loadParallaxComponent`で読み込むだけです。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/components.html#parallaxcomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/ParallaxComponent-class.html
+
+## 動かす
+
+事前準備として`assets/images/`に`bg-back.png`・`bg-stars.png`という画像を入れておきます。
+
+<DemoImage file="bg-back.png" />
+<DemoImage file="bg-stars.png" />
+
+あとは `loadParallaxComponent`で読み込むだけです。
+
+`baseVelocity`でスクロール速度を、`velocityMultiplierDelta`で画像ごとの速度差を設定します。  
+（`velocityMultiplierDelta`を設定しなければパララックス効果がなくなります）
+
+<ExampleCode file="parallax/game.dart" />
+
+これでパララックス効果を持った自動スクロール背景が表示されます。

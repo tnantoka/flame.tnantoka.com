@@ -1,0 +1,10 @@
+---
+const { app = 'examples', file } = Astro.props;
+const host = import.meta.env.PROD
+  ? `/flutter/${app}/`
+  : 'http://localhost:5555/';
+---
+
+<p>
+  <img src={`${host}assets/assets/images/${file}`} class="bg-black" />
+</p>

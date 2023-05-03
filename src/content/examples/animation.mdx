@@ -1,0 +1,37 @@
+---
+title: アニメーション
+id: 12
+date: 2023-05-03
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import DemoImage from '../../components/DemoImage.astro';
+
+## SpriteAnimationComponent
+
+[スプライト](/examples/sprite#sprite)では静止画を表示しましたが、
+`SpriteAnimationComponent`を使えばアニメーションさせることもできます。
+
+他にも方法はありますが、`images.load`で読み込んだ横並びの画像から、
+`SpriteAnimationData.sequenced`でサイズ・数・秒することで、1 枚の画像からアニメーションを作れます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/components.html#spriteanimationcomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/SpriteAnimationComponent-class.html
+
+## 動かす
+
+事前準備として`assets/images/`に`explosion.png`という横並びの画像を入れておきます。
+
+<DemoImage file="explosion.png" />
+
+`pubspec.yml`は[スプライト](/examples/sprite#sprite)で設定済みなので修正不要です。
+
+それでは`SpriteAnimationComponent`を使います。
+`images.load`で先程の画像を読み込み、`SpriteAnimationData.sequenced`で設定を渡します。
+
+<ExampleCode file="animation/game.dart" />
+
+これで画面中央にアニメーションが描画されます。

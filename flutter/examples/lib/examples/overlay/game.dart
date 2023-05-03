@@ -10,7 +10,7 @@ class OverlayGame extends FlameGame {
 
     await add(
       ButtonComponent(
-        position: Vector2(size.x * 0.5, size.y * 0.5),
+        position: Vector2(size.x * 0.5, size.y * 0.2),
         onPressed: () => overlays.add('modal'),
         button: TextComponent(
           text: 'Modal',

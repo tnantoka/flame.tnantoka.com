@@ -1,0 +1,39 @@
+---
+title: スプライト
+id: 11
+date: 2023-05-03
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import DemoImage from '../../components/DemoImage.astro';
+
+## SpriteComponent
+
+これまでは単色の四角や円のみを使ってきましたが、そろそろ画像を表示したくなってきました。
+そんなときに使うのがスプライトです。
+
+`SpriteComponent`も`PositionComponent`の子なので基本的な使い方はこれまでと変わりません。
+`sprite`に`Sprite.load`した結果を指定することで、画像を表示することができます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/components.html#spritecomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/SpriteComponent-class.html
+
+## 描画する
+
+事前準備として`assets/images/`に`asteroid.png`という画像を入れておきます。
+
+<DemoImage file="asteroid.png" />
+
+画像を使えるように`pubspec.yml`に設定します。
+
+<ExampleCode file="pubspec.yaml" label="sprite" dir="examples" lang="yaml" />
+
+これで準備は OK なので、`SpriteComponent`を使います。
+`Sprite.load`で先程の画像を読み込み、`SpriteComponent`の`sprite`に指定しています。
+
+<ExampleCode file="sprite/game.dart" />
+
+これで画面中央に画像が描画されます。

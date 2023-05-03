@@ -32,3 +32,8 @@ flutter:
       fonts:
         - asset: assets/fonts/DotGothic16-Regular.ttf
 # </text>
+
+# <sprite>
+  assets:
+    - assets/images/
+# </sprite>
