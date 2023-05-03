@@ -1,0 +1,47 @@
+---
+title: オーバーレイ
+id: 10
+date: 2023-05-03
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## オーバーレイ
+
+Flame は Flutter の通常画面を表示するための、オーバーレイという仕組みがあります。
+これを使うことで、例えば設定画面やモーダルなどを普通の Flutter で構築することができます。
+
+この機能は僕が Flame の中で気に入っているものの 1 つです。  
+やはりこの時代 UI はリアクティブに書きたいので、素の Flutter に任せちゃおうというのはとても良いと思います。
+
+## overlayBuilderMap
+
+オーバーレイで表示する UI は Flutter の Widget として作れば OK です。
+その Widget を`GameWidget`の`overlayBuilderMap`に登録します。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/overlays.html#overlays
+
+## 動かす
+
+オーバーレイとして表示する UI を用意します。
+今回は半透明の背景の中央にモーダルダイアログが表示されるものにします。
+
+OK をクリックしたら`game.overlays.remove`を使ってオーバーレイを非表示にしています。
+
+<ExampleCode file="overlay/page.dart" label="overlay1" />
+
+次に GameWidget にオーバーレイを登録しておく必要があります。
+今回は`modal`という名前で、先程作った`Modal`を設定しています。
+`modal`は他の箇所でも使うので定数にすべきでしょうが、この例では文字列で済ませています。
+
+<ExampleCode file="overlay/page.dart" label="overlay2" />
+
+最後にボタンを押すとオーバーレイを表示するようにします。
+なお、このボタンは`buttonDown`を省略しているのでクリック中も表示が変わりません。
+
+オーバーレイの表示`overlays.add`を使います。
+
+<ExampleCode file="overlay/game.dart" label="overlay3" />
+
+これで素の Flutter 製の UI が表示されるようになりました。

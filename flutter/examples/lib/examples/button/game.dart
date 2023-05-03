@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 class ButtonGame extends FlameGame {
   // <button1>
-  late final ButtonComponent _button;
   late final TextComponent _text;
   var _count = 0;
   // </button1>
@@ -24,30 +23,31 @@ class ButtonGame extends FlameGame {
     // </button2>
 
     // <button4>
-    _button = ButtonComponent(
-      position: Vector2(size.x * 0.5, size.y * 0.5),
-      onPressed: () => _count++,
-      button: TextComponent(
-        text: 'Button',
-        textRenderer: TextPaint(
-          style: const TextStyle(
-            fontSize: 32,
-            color: Colors.white,
+    await add(
+      ButtonComponent(
+        position: Vector2(size.x * 0.5, size.y * 0.5),
+        onPressed: () => _count++,
+        button: TextComponent(
+          text: 'Button',
+          textRenderer: TextPaint(
+            style: const TextStyle(
+              fontSize: 32,
+              color: Colors.white,
+            ),
           ),
         ),
-      ),
-      buttonDown: TextComponent(
-        text: 'Button',
-        textRenderer: TextPaint(
-          style: const TextStyle(
-            fontSize: 32,
-            color: Colors.grey,
+        buttonDown: TextComponent(
+          text: 'Button',
+          textRenderer: TextPaint(
+            style: const TextStyle(
+              fontSize: 32,
+              color: Colors.grey,
+            ),
           ),
         ),
+        anchor: Anchor.center,
       ),
-      anchor: Anchor.center,
     );
-    await add(_button);
     // </button4>
   }
 

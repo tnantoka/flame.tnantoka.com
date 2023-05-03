@@ -9,6 +9,7 @@ import 'examples/move/page.dart';
 import 'examples/joystick/page.dart';
 import 'examples/text/page.dart';
 import 'examples/button/page.dart';
+import 'examples/overlay/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/joystick': (context) => JoystickPage(),
         '/text': (context) => TextPage(),
         '/button': (context) => ButtonPage(),
+        '/overlay': (context) => OverlayPage(),
       },
     );
   }
