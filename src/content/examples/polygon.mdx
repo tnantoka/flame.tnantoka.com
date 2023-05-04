@@ -1,0 +1,28 @@
+---
+title: ポリゴン
+id: 18
+date: 2023-05-04
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## PolygonComponent
+
+多角形には`PolygonComponent`を使います。
+
+`relative`ファクトリーと`parentSize`を使うことでサイズを可変にできて便利です。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/components.html#polygoncomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/geometry/PolygonComponent-class.html
+
+## 描画する
+
+`PolygonComponent.relative`を使って-1〜1 の範囲でポリゴンを指定し、
+parentSize でサイズを決めています。
+
+<ExampleCode file="polygon/game.dart" />
+
+これで平行四辺形が画面中央に表示されます。

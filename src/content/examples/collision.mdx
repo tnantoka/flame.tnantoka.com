@@ -1,0 +1,42 @@
+---
+title: 衝突判定
+id: 17
+date: 2023-05-03
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## HasCollisionDetection
+
+`HasCollisionDetection`ミックスインを使うことで物理演算を使わない当たり判定をすることができます。
+
+各コンポーネントに Hitbox を設定すると、衝突時に`onCollision`が呼ばれるようになります。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/collision_detection.html#hascollisiondetection
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/game/HasCollisionDetection-mixin.html
+
+## 動かしてみる
+
+地面を作り、タップした場所にボールを生成するサンプルを作ってみます。
+ボールは落下しますが、地面か他のボールに触れると停止します。
+
+まずは地面を作ります。
+`RectangleHitbox`を使って、四角形の Hitbox を作ります。
+
+<ExampleCode file="collision/game.dart" label="collision1" />
+
+次にボールクラスを用意します。
+`CircleHitbox`を使って、円形の Hitbox を作ります。
+また`update`では落下させるために`y`を増やしています。
+`onCollision`で落下を止めます。
+
+<ExampleCode file="collision/game.dart" label="collision2" />
+
+あとはゲームクラスで、地面やボールを生成します。
+
+<ExampleCode file="collision/game.dart" label="collision3" />
+
+これで当たり判定が動くようになりました。

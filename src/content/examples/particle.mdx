@@ -1,0 +1,36 @@
+---
+title: パーティクル
+id: 15
+date: 2023-05-03
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import DemoImage from '../../components/DemoImage.astro';
+
+## ParticleSystemComponent
+
+`ParticleSystemComponent`を使うといろいろなパーティクルを表示することができます。
+
+画像を使う`SpriteParticle`や円を使う`CircleParticle`などがあります。
+[公式サンプル](https://examples.flame-engine.org/#/Rendering_Particles)を見るとどんな種類があるかわかると思います。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/rendering/particles.html#particles
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/ParticleSystemComponent-class.html
+
+## 動かしてみる
+
+赤い四角をランダムに散らすパーティクルを表示してみます。
+
+事前準備として`assets/images/`に`particle.png`という画像を入れておきます。
+
+<DemoImage file="particle.png" />
+
+この画像を`SpriteParticle`に設定して`ParticleSystemComponent`を作成します。
+ここでは 32 個のランダムな速度のパーティクルを生成しています。
+
+<ExampleCode file="particle/game.dart" />
+
+これでタップした箇所にパーティクルが表示されます。

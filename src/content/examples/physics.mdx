@@ -1,0 +1,44 @@
+---
+title: 物理演算
+id: 16
+date: 2023-05-03
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import DemoImage from '../../components/DemoImage.astro';
+
+## forge2d
+
+物理エンジン Box2D を Dart に移植した[forge2d](https://pub.dev/packages/forge2d)によって物理演算を行うことができます。
+Flame 向けには[flame_forge2d](https://pub.dev/packages/flame_forge2d)が用意されています。
+
+`FlameGame`の代わりに`Forge2dGame`を使うことで forge2d の機能を簡単に使うことができます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/bridge_packages/flame_forge2d/forge2d.html#forge2d
+
+API リファレンス  
+https://pub.dev/documentation/flame_forge2d/latest/forge2d_game/Forge2DGame-class.html
+
+## 動かしてみる
+
+左右と下に壁を作り、タップした場所にボールを生成するサンプルを作ってみます。
+
+まずは`flame_forge2d`を導入します。
+
+<ExampleCode file="pubspec.yaml" label="physics" dir="examples" lang="yaml" />
+
+壁クラスを用意します。`BodyComponent`を継承して作ります。
+
+<ExampleCode file="physics/game.dart" label="physics1" />
+
+ボールクラスを用意します。
+回転がわかりやすいように線を引いています。
+
+<ExampleCode file="physics/game.dart" label="physics2" />
+
+`Forge2dGame`を継承したゲームクラスで、壁やボールを生成します。
+
+<ExampleCode file="physics/game.dart" label="physics3" />
+
+これで物理演算が動くようになりました。

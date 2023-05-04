@@ -13,6 +13,11 @@ import 'examples/overlay/page.dart';
 import 'examples/sprite/page.dart';
 import 'examples/animation/page.dart';
 import 'examples/parallax/page.dart';
+import 'examples/tap/page.dart';
+import 'examples/particle/page.dart';
+import 'examples/physics/page.dart';
+import 'examples/collision/page.dart';
+import 'examples/polygon/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +32,7 @@ class MyApp extends StatelessWidget {
       title: 'Examples',
       initialRoute: '/',
       routes: {
-        '/': (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
+        '/': (context) => const MyHomePage(),
         '/hello': (context) => HelloPage(),
         '/rect': (context) => RectPage(),
         '/line': (context) => LinePage(),
@@ -41,54 +46,23 @@ class MyApp extends StatelessWidget {
         '/sprite': (context) => SpritePage(),
         '/animation': (context) => AnimationPage(),
         '/parallax': (context) => ParallaxPage(),
+        '/tap': (context) => TapPage(),
+        '/particle': (context) => ParticlePage(),
+        '/physics': (context) => PhysicsPage(),
+        '/collision': (context) => CollisionPage(),
+        '/polygon': (context) => PolygonPage(),
       },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      body: Container(),
     );
   }
 }

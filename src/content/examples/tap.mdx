@@ -1,0 +1,28 @@
+---
+title: タップ
+id: 14
+date: 2023-05-03
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## TapDetector
+
+`TapDetector`ミックスインを使うとタップを検出できます。
+
+例えば`onTapDown`にはタップしたときの処理を書くことができます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/inputs/gesture_input.html#example
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/input/TapDetector-mixin.html
+
+## 動かす
+
+Game クラスに`with TapDetector`を追加し、`onTapDown`メソッドでタップ時の処理を書きます。  
+今回はタップした場所に[円](/examples/circle#circle)を表示しています。
+
+<ExampleCode file="tap/game.dart" />
+
+このようにしてタップに反応するゲームを作ることができます。
