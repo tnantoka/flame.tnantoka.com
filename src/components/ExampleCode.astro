@@ -24,10 +24,9 @@ if (label) {
   open = lines.findIndex((l) => l.includes(`<${label}>`)) + 1;
   close = lines.findIndex((l) => l.includes(`</${label}>`));
   code = code
-    .replace(new RegExp(`[\\s\\S]*<${label}>.*$`, 'm'), '')
+    .replace(new RegExp(`[\\s\\S]*<${label}>.*\n`, 'm'), '')
     .replace(new RegExp(`^.*</${label}>[\\s\\S]*`, 'm'), '')
-    .replace(/^[^\n]*\n/, '')
-    .replace(/[\s]*\n$/, '\n');
+    .replace(/^.*<\/?[^>]+>.*\n/gm, '');
 }
 const hash = open > 0 ? `#L${open + 1}-L${close}` : '';
 ---

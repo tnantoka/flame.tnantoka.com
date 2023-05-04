@@ -18,10 +18,34 @@ import 'examples/particle/page.dart';
 import 'examples/physics/page.dart';
 import 'examples/collision/page.dart';
 import 'examples/polygon/page.dart';
+import 'examples/sound/page.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+final routes = {
+  '/': (context) => const MyHomePage(),
+  '/hello': (context) => HelloPage(),
+  '/rect': (context) => RectPage(),
+  '/line': (context) => LinePage(),
+  '/debug': (context) => DebugPage(),
+  '/circle': (context) => CirclePage(),
+  '/move': (context) => MovePage(),
+  '/joystick': (context) => JoystickPage(),
+  '/text': (context) => TextPage(),
+  '/button': (context) => ButtonPage(),
+  '/overlay': (context) => OverlayPage(),
+  '/sprite': (context) => SpritePage(),
+  '/animation': (context) => AnimationPage(),
+  '/parallax': (context) => ParallaxPage(),
+  '/tap': (context) => TapPage(),
+  '/particle': (context) => ParticlePage(),
+  '/physics': (context) => PhysicsPage(),
+  '/collision': (context) => CollisionPage(),
+  '/polygon': (context) => PolygonPage(),
+  '/sound': (context) => SoundPage(),
+};
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -31,27 +55,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Examples',
       initialRoute: '/',
-      routes: {
-        '/': (context) => const MyHomePage(),
-        '/hello': (context) => HelloPage(),
-        '/rect': (context) => RectPage(),
-        '/line': (context) => LinePage(),
-        '/debug': (context) => DebugPage(),
-        '/circle': (context) => CirclePage(),
-        '/move': (context) => MovePage(),
-        '/joystick': (context) => JoystickPage(),
-        '/text': (context) => TextPage(),
-        '/button': (context) => ButtonPage(),
-        '/overlay': (context) => OverlayPage(),
-        '/sprite': (context) => SpritePage(),
-        '/animation': (context) => AnimationPage(),
-        '/parallax': (context) => ParallaxPage(),
-        '/tap': (context) => TapPage(),
-        '/particle': (context) => ParticlePage(),
-        '/physics': (context) => PhysicsPage(),
-        '/collision': (context) => CollisionPage(),
-        '/polygon': (context) => PolygonPage(),
-      },
+      routes: routes,
     );
   }
 }
@@ -62,7 +66,17 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: ListView(
+        children: [
+          for (final route in routes.keys)
+            ListTile(
+              title: Text(route),
+              onTap: () {
+                Navigator.pushNamed(context, route);
+              },
+            ),
+        ],
+      ),
     );
   }
 }

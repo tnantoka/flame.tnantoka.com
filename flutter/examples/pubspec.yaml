@@ -19,6 +19,9 @@ dependencies:
 # <physics>
   flame_forge2d: ^0.13.0+1
 # </physics>
+# <sound1>
+  flame_audio: ^2.0.2
+# </sound1>
 
 dev_dependencies:
   flutter_test:
@@ -36,7 +39,10 @@ flutter:
         - asset: assets/fonts/DotGothic16-Regular.ttf
 # </text>
 
+# <sound2>
 # <sprite>
   assets:
     - assets/images/
 # </sprite>
+    - assets/audio/
+# </sound2>

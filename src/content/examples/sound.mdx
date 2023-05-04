@@ -1,0 +1,37 @@
+---
+title: サウンド
+id: 19
+date: 2023-05-04
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import DemoAsset from '../../components/DemoAsset.astro';
+
+## flame_audio
+
+音を鳴らすには[flame_audio](https://pub.dev/packages/flame_audio)を使います。
+これは[audioplayers](https://pub.dev/packages/audioplayers)をラップしたものです。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/bridge_packages/flame_audio/audio.html
+
+API リファレンス  
+https://pub.dev/documentation/flame_audio/latest/flame_audio/FlameAudio-class.html
+
+## 音を鳴らす
+
+`flame_audio`を導入します。
+
+<ExampleCode file="pubspec.yaml" label="sound1" dir="examples" lang="yaml" />
+
+`assets/audio`に`hit.wav`を入れ、`pubspec.yaml`でも指定します。
+
+<ExampleCode file="pubspec.yaml" label="sound2" dir="examples" lang="yaml" />
+
+<DemoAsset file="hit.wav" />
+
+ボタンを押したときに`FlameAudio.play`で音を鳴らします。
+
+<ExampleCode file="sound/game.dart" />
+
+これでサウンドが再生されます。
