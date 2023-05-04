@@ -23,7 +23,8 @@ $ npm run dev
 
 ## License
 
-MIT
+- Content: CC-BY
+- Code: MIT
 
 ## Author
 
