@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'examples/hello/page.dart';
+import 'examples/lifecycle/page.dart';
 import 'examples/rect/page.dart';
 import 'examples/line/page.dart';
 import 'examples/debug/page.dart';
@@ -27,6 +28,7 @@ void main() {
 final routes = {
   '/': (context) => const MyHomePage(),
   '/hello': (context) => HelloPage(),
+  '/lifecycle': (context) => LifecyclePage(),
   '/rect': (context) => RectPage(),
   '/line': (context) => LinePage(),
   '/debug': (context) => DebugPage(),

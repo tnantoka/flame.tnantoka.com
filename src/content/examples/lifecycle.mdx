@@ -1,0 +1,33 @@
+---
+title: ライフサイクル
+id: 1.5
+date: 2023-05-09
+---
+
+import Diagram from '../../components/Diagram.astro';
+
+# ライフサイクルメソッド
+
+`FlameGame`が Flutter の Widget ツリーに追加されると下図のようなライフサイクルを辿ります。  
+`onLoad`以外は複数回呼ばれることがあります。
+
+<Diagram
+  code={`
+flowchart TD
+    onGameResize --> onLoad["onLoad<br>(1回のみ)"]
+    onLoad --> onMount
+    onMount --> Update
+    Update --> Render
+    Render --> Update
+    Update --> onRemove
+`}
+/>
+
+本サイトで頻繁に使うのは以下の 2 つです。
+
+- `onLoad`: 初回読み込み時に呼ばれる
+- `Update`: フレームごとに呼ばれる
+
+右のライブデモを見ると、`Update`・`Render`はずっと呼び出されていることがわかると思います。  
+また、ブラウザのウィンドウサイズを変えると `onGameResize`も 2 回以上呼ばれます。  
+今回はゲームをツリーから削除しないので`onRemove`は呼ばれず、`onMount`・`onLoad`は 1 回ずつ呼ばれます。

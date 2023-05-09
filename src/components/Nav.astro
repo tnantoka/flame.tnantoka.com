@@ -31,7 +31,7 @@ const isProd = import.meta.env.PROD;
   <div class="list-group flex-fill overflow-auto mt-1 small rounded-0">
     {
       exampleEntries
-        .sort((a, b) => a.data.id - b.data.id)
+        .sort((a, b) => parseFloat(a.data.id) - parseFloat(b.data.id))
         .map((entry) => (
           <a
             href={`/examples/${entry.slug}#${entry.slug}`}
