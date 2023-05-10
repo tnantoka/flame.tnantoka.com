@@ -1,0 +1,31 @@
+---
+title: エフェクト
+id: 20
+date: 2023-05-10
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## MoveByEffect
+
+エフェクトを使うとコンポーネントに様々な効果を与えることができます。
+
+ここでは指定距離を動かす `MoveByEffect`を紹介します。  
+（指定地点へ動かしたい場合は `MoveToEffect`を使います。）
+
+他のエフェクトは公式ドキュメントに載っています。
+動かし方はそんなに変わらないので `MoveByEffect`の動かし方がわかれば後は同じ要領で動かせます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/effects.html#movebyeffect
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/effects/MoveByEffect-class.html
+
+## 動かす
+
+画面をタップしたら`_rect`に対して`MoveByEffect`を適用しています。
+
+<ExampleCode file="effect/game.dart" />
+
+これで四角形がランダムに 0.3 秒かけて動くエフェクトが実装できました。

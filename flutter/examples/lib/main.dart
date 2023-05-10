@@ -20,6 +20,7 @@ import 'examples/physics/page.dart';
 import 'examples/collision/page.dart';
 import 'examples/polygon/page.dart';
 import 'examples/sound/page.dart';
+import 'examples/effect/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,6 +48,7 @@ final routes = {
   '/collision': (context) => CollisionPage(),
   '/polygon': (context) => PolygonPage(),
   '/sound': (context) => SoundPage(),
+  '/effect': (context) => EffectPage(),
 };
 
 class MyApp extends StatelessWidget {
