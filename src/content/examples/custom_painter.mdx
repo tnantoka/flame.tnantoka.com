@@ -1,0 +1,29 @@
+---
+title: カスタムペインター
+id: 22
+date: 2023-05-13
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## CustomPainterComponent
+
+`CustomPainterComponent`を使うとペインターで自由に描画するコンポーネントを作成できます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/components.html#custompaintercomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/CustomPainterComponent-class.html
+
+## 描画する
+
+まずはカスタムペインターを定義します。
+
+<ExampleCode file="custom_painter/game.dart" label="custom_painter1" />
+
+コンポーネントの`painter`オプションとして指定します。
+
+<ExampleCode file="custom_painter/game.dart" label="custom_painter2" />
+
+今回はプレースホルダー画像のような斜め線入りの四角形を描画しています。

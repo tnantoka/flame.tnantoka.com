@@ -1,0 +1,35 @@
+---
+title: スクリーンヒットボックス
+id: 23
+date: 2023-05-13
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## ScreenHitbox
+
+ゲームに`ScreenHitbox`を追加すると、画面の周囲に当たり判定を追加できます。
+
+たとえば壁に当たったら消すなどの処理を実装するのに便利です。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/collision_detection.html#screenhitbox
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/collisions/ScreenHitbox-class.html
+
+## 動かす
+
+ゲームの`onLoad`で`ScreenHitbox`を設定します。
+
+<ExampleCode file="screen_hitbox/game.dart" label="screen_hitbox1" />
+
+タップしたらランダムに動くボールを追加します。
+
+<ExampleCode file="screen_hitbox/game.dart" label="screen_hitbox2" />
+
+`Ball`では`onCollision`で`ScreenHitbox`に当たったら止まって色を変えます。
+
+<ExampleCode file="screen_hitbox/game.dart" label="screen_hitbox3" />
+
+このように画面の周囲に当たり判定を追加できます。

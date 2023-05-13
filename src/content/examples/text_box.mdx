@@ -1,0 +1,27 @@
+---
+title: テキストボックス
+id: 21
+date: 2023-05-13
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## TextBoxComponent
+
+`TextBoxComponent`を使うと指定の領域に合わせてテキストを表示することができます。
+
+また `timePerChar` というテキストを徐々に表示するオプションもあります。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/rendering/text_rendering.html#textboxcomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/TextBoxComponent-class.html
+
+## 描画する
+
+`onLoad`でテキストボックスを追加し、`render`ではテキストボックスの領域に合わせてボーダーを描画しています。
+
+<ExampleCode file="text_box/game.dart" />
+
+これで枠内に 0.08 秒ごとにテキストが表示されます。

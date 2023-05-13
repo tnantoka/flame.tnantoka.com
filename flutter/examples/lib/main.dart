@@ -21,6 +21,9 @@ import 'examples/collision/page.dart';
 import 'examples/polygon/page.dart';
 import 'examples/sound/page.dart';
 import 'examples/effect/page.dart';
+import 'examples/text_box/page.dart';
+import 'examples/custom_painter/page.dart';
+import 'examples/screen_hitbox/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,6 +52,9 @@ final routes = {
   '/polygon': (context) => PolygonPage(),
   '/sound': (context) => SoundPage(),
   '/effect': (context) => EffectPage(),
+  '/text_box': (context) => TextBoxPage(),
+  '/custom_painter': (context) => CustomPainterPage(),
+  '/screen_hitbox': (context) => ScreenHitboxPage(),
 };
 
 class MyApp extends StatelessWidget {
