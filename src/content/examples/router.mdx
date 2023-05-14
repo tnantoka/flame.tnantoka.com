@@ -1,0 +1,36 @@
+---
+title: ルーター
+id: 24
+date: 2023-05-14
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## RouterComponent
+
+`RouterComponent`を使うと、複数の画面を切り替えることができます。
+
+`MaterialApp`の`initialRoute`と`routes`と同じような使い方です。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/router.html#routercomponent
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/game/RouterComponent-class.html
+
+ちなみに、日本では`ルーター`と発音されがちな`router`ですが、`ラウター`の方が正しい発音に近いようですね。
+
+## 動かす
+
+まずは遷移する先を 2 つ作ります。
+これは`Component`を継承して作れば OK です。
+
+画面遷移は `gameRef.router.pushNamed`、戻るのは`gameRef.router.pop`を使います。
+
+<ExampleCode file="router/game.dart" label="router1" />
+
+そしてその 2 つを`RouterComponent`に登録します。
+
+<ExampleCode file="router/game.dart" label="router2" />
+
+これで`FirstRoute`と`SecondRoute`を行き来できるようになりました。
