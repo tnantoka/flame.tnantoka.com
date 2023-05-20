@@ -8,7 +8,7 @@ import Search from '../components/Search.astro';
 const { exampleName } = Astro.params;
 const exampleEntries = await getCollection('examples');
 const entry = exampleEntries.find((entry) => entry.slug === exampleName);
-const { title } = Astro.props;
+const { title, noDemo = false, date = entry && entry.data.date } = Astro.props;
 const host = import.meta.env.PROD ? '/' : 'http://localhost:5555/';
 ---
 
@@ -22,9 +22,9 @@ const host = import.meta.env.PROD ? '/' : 'http://localhost:5555/';
       <div class="col-6">
         <h1 class="mt-3">{title}</h1>
         {
-          entry && (
+          date && (
             <p class="small text-muted">
-              {entry.data.date.toLocaleDateString('sv-SE')}
+              {new Date(date).toLocaleDateString('sv-SE')}
             </p>
           )
         }
@@ -42,7 +42,7 @@ const host = import.meta.env.PROD ? '/' : 'http://localhost:5555/';
       </div>
 
       <div class="col-4">
-        <Demo exampleName={exampleName} />
+        {!noDemo && <Demo exampleName={exampleName} />}
       </div>
     </div>
   </div>

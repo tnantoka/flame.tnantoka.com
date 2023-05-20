@@ -36,6 +36,21 @@ const { title } = Astro.props;
   <body class="h-100">
     <slot />
 
+    <ul class="list-inline mt-3 me-3 position-fixed top-0 end-0">
+      <li class="list-inline-item">
+        <a href="/" class="text-decoration-none text-reset">
+          <i class="bi-house"></i>
+          ホーム
+        </a>
+      </li>
+      <li class="list-inline-item ms-2">
+        <a href="/games" class="text-decoration-none text-reset">
+          <i class="bi-controller"></i>
+          サンプルゲーム
+        </a>
+      </li>
+    </ul>
+
     <a
       href="https://github.com/tnantoka/flame.tnantoka.com"
       class="github-corner position-fixed top-0 end-0"
@@ -60,6 +75,13 @@ const { title } = Astro.props;
       ></a
     >
     <style>
+      .github-corner {
+        top: auto !important;
+        bottom: 80px;
+      }
+      .github-corner svg {
+        transform: scale(1, -1);
+      }
       .github-corner:hover .octo-arm {
         animation: octocat-wave 560ms ease-in-out;
       }
