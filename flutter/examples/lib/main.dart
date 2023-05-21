@@ -25,6 +25,7 @@ import 'examples/text_box/page.dart';
 import 'examples/custom_painter/page.dart';
 import 'examples/screen_hitbox/page.dart';
 import 'examples/router/page.dart';
+import 'examples/priority/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,6 +58,7 @@ final routes = {
   '/custom_painter': (context) => CustomPainterPage(),
   '/screen_hitbox': (context) => ScreenHitboxPage(),
   '/router': (context) => RouterPage(),
+  '/priority': (context) => PriorityPage(),
 };
 
 class MyApp extends StatelessWidget {

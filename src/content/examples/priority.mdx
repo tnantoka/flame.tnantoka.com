@@ -1,0 +1,36 @@
+---
+title: プライオリティ
+id: 25
+date: 2023-05-21
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## priority
+
+`Component`の`priority`を設定することで、描画順を制御できます。
+
+デフォルトは 0 で、値が大きいほど前面になります。CSS の`z-index`と同じような使い方です。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/components.html#priority
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/Component-class.html
+
+## 描画する
+
+まずは描画するコンポーネントを作ります。
+
+`Tappable`を指定して、`onTapDown`で`priority`を変更しています。
+
+また`HasGameRef`によって`game`を参照できています。
+「全ての`Rect`が持つ`priority`の最大値」+1 を指定することで、最前面に描画されるようになります。
+
+<ExampleCode file="priority/game.dart" label="priority1" />
+
+そして、この`Rect`を色と位置を変えて追加します。
+
+<ExampleCode file="priority/game.dart" label="priority2" />
+
+これで描画順が変わることが確認できます。
