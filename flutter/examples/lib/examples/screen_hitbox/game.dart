@@ -8,7 +8,7 @@ import 'package:flame/palette.dart';
 
 class ScreenHitboxGame extends FlameGame
     with TapDetector, HasCollisionDetection {
-  final random = Random();
+  final _random = Random();
 
   // <screen_hitbox1>
   @override
@@ -27,8 +27,8 @@ class ScreenHitboxGame extends FlameGame
     add(
       Ball(
         position: info.eventPosition.game,
-        vx: random.nextDouble() * 200 - 100,
-        vy: random.nextDouble() * 200 - 100,
+        vx: _random.nextDouble() * 200 - 100,
+        vy: _random.nextDouble() * 200 - 100,
       ),
     );
   }

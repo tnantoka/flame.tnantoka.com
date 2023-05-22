@@ -1,0 +1,32 @@
+---
+title: キーボード
+id: 26
+date: 2023-05-22
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## KeyboardEvents
+
+`KeyboardEvents`ミックスインを使うとキーボード入力を処理できます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/inputs/keyboard_input.html
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/input/KeyboardEvents-mixin.html
+
+## 動かす
+
+まずはキーボードで動かす四角形を準備します。
+`update`で`vx/vy`を加算することで、毎フレーム移動します。
+
+<ExampleCode file="keyboard/game.dart" label="keyboard1" />
+
+次に`KeyboardEvents`ミックスインを使ってキーボード入力を処理します。
+
+`onKeyEvent`の中で、キーが離されたら`vx/vy`を 0 に、矢印キーが入力されていたら`vx/vy`を ±1 にしています。
+
+<ExampleCode file="keyboard/game.dart" label="keyboard2" />
+
+これでキーボード入力を処理できるようになりました。

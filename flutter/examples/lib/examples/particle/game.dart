@@ -6,7 +6,7 @@ import 'package:flame/game.dart';
 import 'package:flame/particles.dart';
 
 class ParticleGame extends FlameGame with TapDetector {
-  final random = Random();
+  final _random = Random();
 
   @override
   void onTapDown(TapDownInfo info) async {
@@ -33,9 +33,9 @@ class ParticleGame extends FlameGame with TapDetector {
 
   Vector2 _randomSpeed() {
     return Vector2(
-          random.nextDouble() * 2 - 1,
-          random.nextDouble() * 2 - 1,
+          _random.nextDouble() * 2 - 1,
+          _random.nextDouble() * 2 - 1,
         ) *
-        random.nextInt(96).toDouble();
+        _random.nextInt(96).toDouble();
   }
 }
