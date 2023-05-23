@@ -27,6 +27,7 @@ import 'examples/screen_hitbox/page.dart';
 import 'examples/router/page.dart';
 import 'examples/priority/page.dart';
 import 'examples/keyboard/page.dart';
+import 'examples/camera/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -61,6 +62,7 @@ final routes = {
   '/router': (context) => RouterPage(),
   '/priority': (context) => PriorityPage(),
   '/keyboard': (context) => KeyboardPage(),
+  '/camera': (context) => CameraPage(),
 };
 
 class MyApp extends StatelessWidget {

@@ -4,23 +4,37 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class KeyboardGame extends FlameGame with KeyboardEvents {
-  // <keyboard1>
+class CameraGame extends FlameGame with KeyboardEvents {
   late RectangleComponent _rect;
 
   var _vx = 0.0;
   var _vy = 0.0;
-  final _speed = 100.0;
+  final _speed = 500.0;
 
   @override
   Future<void> onLoad() async {
     super.onLoad();
 
     _rect = RectangleComponent(
-      position: Vector2(size.x * 0.5, size.y * 0.5),
+      position: Vector2.zero(),
       size: Vector2.all(100),
-      anchor: Anchor.center,
     );
+
+    // <camera2>
+    final map = Map();
+    await add(map);
+
+    camera.followComponent(
+      _rect,
+      worldBounds: Rect.fromLTWH(
+        0,
+        0,
+        map.width,
+        map.height,
+      ),
+    );
+    // </camera2>
+
     await add(_rect);
   }
 
@@ -30,9 +44,7 @@ class KeyboardGame extends FlameGame with KeyboardEvents {
 
     _rect.position += Vector2(_vx, _vy) * dt;
   }
-  // </keyboard1>
 
-  // <keyboard2>
   @override
   KeyEventResult onKeyEvent(
       RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
@@ -59,5 +71,30 @@ class KeyboardGame extends FlameGame with KeyboardEvents {
 
     return KeyEventResult.ignored;
   }
-  // </keyboard2>
 }
+
+// <camera1>
+class Map extends PositionComponent {
+  Map()
+      : super(
+          size: Vector2.all(1500),
+        );
+
+  @override
+  void render(Canvas canvas) {
+    super.render(canvas);
+
+    const steps = 10;
+    for (var i = steps; i >= 0; i -= 1) {
+      canvas.drawRect(
+        Rect.fromCenter(
+          center: Offset(width * 0.5, height * 0.5),
+          width: width / steps * i.toDouble(),
+          height: height / steps * i.toDouble(),
+        ),
+        Paint()..color = Color.fromARGB(255, 0, ((200 / steps) * i).toInt(), 0),
+      );
+    }
+  }
+}
+// </camera1>
