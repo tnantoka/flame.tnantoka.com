@@ -1,0 +1,34 @@
+---
+title: スプライトシート
+id: 28
+date: 2023-05-25
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import DemoAsset from '../../components/DemoAsset.astro';
+
+## SpriteSheet
+
+`SpriteSheet`を使うと、スプライトシート画像を読み込むことができます。
+読み込んだ後は、行や時間を指定してアニメーションやスプライトを作れます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/rendering/images.html#spritesheet
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/sprite/SpriteSheet-class.html
+
+## 描画する
+
+事前準備として`assets/images/`に`power-up.png`という画像を入れておきます。
+
+<DemoAsset file="power-up.png" />
+
+あとは、この画像を読み込み`SpriteSheet`を作成。
+`SpriteSheet`の`createAnimation`で作成したアニメーションを`SpriteAnimationComponent`に指定すれば OK です。
+
+`for`で 1 行目と 2 行目をそれぞれ表示しています。
+
+<ExampleCode file="sprite_sheet/game.dart" />
+
+これで[アニメーション](/examples/animation#animation)と同様のアニメーションが作成できました。
