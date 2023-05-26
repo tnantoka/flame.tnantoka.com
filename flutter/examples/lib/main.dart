@@ -1,34 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'examples/hello/page.dart';
-import 'examples/lifecycle/page.dart';
-import 'examples/rect/page.dart';
-import 'examples/line/page.dart';
-import 'examples/debug/page.dart';
-import 'examples/circle/page.dart';
-import 'examples/move/page.dart';
-import 'examples/joystick/page.dart';
-import 'examples/text/page.dart';
-import 'examples/button/page.dart';
-import 'examples/overlay/page.dart';
-import 'examples/sprite/page.dart';
-import 'examples/animation/page.dart';
-import 'examples/parallax/page.dart';
-import 'examples/tap/page.dart';
-import 'examples/particle/page.dart';
-import 'examples/physics/page.dart';
-import 'examples/collision/page.dart';
-import 'examples/polygon/page.dart';
-import 'examples/sound/page.dart';
-import 'examples/effect/page.dart';
-import 'examples/text_box/page.dart';
-import 'examples/custom_painter/page.dart';
-import 'examples/screen_hitbox/page.dart';
-import 'examples/router/page.dart';
-import 'examples/priority/page.dart';
-import 'examples/keyboard/page.dart';
-import 'examples/camera/page.dart';
-import 'examples/sprite_sheet/page.dart';
+import 'examples/examples.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,6 +37,7 @@ final routes = {
   '/keyboard': (context) => KeyboardPage(),
   '/camera': (context) => CameraPage(),
   '/sprite_sheet': (context) => SpriteSheetPage(),
+  '/glow': (context) => GlowPage(),
 };
 
 class MyApp extends StatelessWidget {
