@@ -38,6 +38,7 @@ final routes = {
   '/camera': (context) => CameraPage(),
   '/sprite_sheet': (context) => SpriteSheetPage(),
   '/glow': (context) => GlowPage(),
+  '/flip': (context) => FlipPage(),
 };
 
 class MyApp extends StatelessWidget {

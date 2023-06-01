@@ -28,3 +28,4 @@ export 'keyboard/page.dart';
 export 'camera/page.dart';
 export 'sprite_sheet/page.dart';
 export 'glow/page.dart';
+export 'flip/page.dart';

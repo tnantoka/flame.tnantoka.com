@@ -1,0 +1,30 @@
+---
+title: 反転
+id: 30
+date: 2023-06-01
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import DemoAsset from '../../components/DemoAsset.astro';
+
+## flipHorizontally
+
+`flipHorizontally`を使うと、コンポーネントを反転させることができます。
+右向きしかない素材を左向きにしたい場合などに便利です。
+
+上下反転させる`filpVertically`もあります。
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/PositionComponent/flipHorizontally.html
+
+## 動かす
+
+`player1`という画像を用意します。
+
+<DemoAsset file="player1.png" />
+
+あとはこれをスプライトとして表示し、タップのたびに`flipHorizontally`を呼び出します。
+
+<ExampleCode file="flip/game.dart" />
+
+これでスプライトを反転できました。
