@@ -33,7 +33,7 @@ class FirstRoute extends Component with HasGameRef<RouterGame> {
         position: Vector2(game.size.x * 0.5, game.size.y * 0.5),
         onPressed: () => gameRef.router.pushNamed('second'),
         button: TextComponent(
-          text: 'Second',
+          text: 'Go to Second',
         ),
         anchor: Anchor.center,
       ),
