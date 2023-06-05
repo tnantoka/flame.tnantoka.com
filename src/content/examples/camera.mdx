@@ -6,15 +6,17 @@ date: 2023-05-23
 
 import ExampleCode from '../../components/ExampleCode.astro';
 
-## Camera
+## CameraComponent
 
-`Camera`の`followComponent`を使うと、よくあるキャラクターに追従する画面スクロールを実現できます。
+`CameraComponent`の`follow`を使うと、よくあるキャラクターに追従する画面スクロールを実現できます。
 
 公式ドキュメント  
-https://docs.flame-engine.org/latest/flame/camera_and_viewport.html
+https://docs.flame-engine.org/latest/flame/camera_component.html
 
 API リファレンス  
-https://pub.dev/documentation/flame/latest/game/Camera-class.html
+https://pub.dev/documentation/flame/latest/camera/CameraComponent-class.html
+
+※ 1.7 以前で使われていた`Camera`は非推奨になりました。
 
 ## 動かす
 
@@ -23,8 +25,10 @@ https://pub.dev/documentation/flame/latest/game/Camera-class.html
 
 <ExampleCode file="camera/game.dart" label="camera1" />
 
-あとは`Map`を`add`して、`followComponent`で`camera`が`_rect`を追いかけるようにします。  
-`worldBounds`で`Map`のサイズを指定しているので、その範囲でスクロールします。
+次にカメラを設定します。
+`world`と`cameraComponent`を作ってゲームに`add`します。
+
+あとは`map`と`_rect`を`world`に`add`して、`follow`で`cameraComponent`が`_rect`を追いかけるようにします。
 
 なお、`_rect`は[キーボード](/examples/keyboard#keyboard)の例で使ったものと同じで、矢印キーで動きます。
 

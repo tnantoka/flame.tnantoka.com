@@ -6,7 +6,7 @@ import 'package:flame/game.dart';
 import 'package:flame/palette.dart';
 
 // <priority2>
-class PriorityGame extends FlameGame with HasTappables {
+class PriorityGame extends FlameGame with HasTappablesBridge {
   @override
   Future<void> onLoad() async {
     super.onLoad();
@@ -21,18 +21,16 @@ class PriorityGame extends FlameGame with HasTappables {
 // </priority2>
 
 // <priority1>
-class Rect extends RectangleComponent with HasGameRef, Tappable {
+class Rect extends RectangleComponent with HasGameRef, TapCallbacks {
   Rect({super.position, super.paint})
       : super(
           size: Vector2.all(100),
         );
 
   @override
-  bool onTapDown(TapDownInfo info) {
+  void onTapDown(TapDownEvent event) {
     priority =
         game.children.whereType<Rect>().map((e) => e.priority).reduce(max) + 1;
-
-    return false;
   }
 }
 // </priority1>

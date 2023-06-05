@@ -1,8 +1,9 @@
 import 'dart:ui';
 
+import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/palette.dart';
-import 'package:flame_forge2d/flame_forge2d.dart';
+import 'package:flame_forge2d/flame_forge2d.dart' hide World;
 
 // <physics3>
 class PhysicsGame extends Forge2DGame with TapDetector {
@@ -10,7 +11,12 @@ class PhysicsGame extends Forge2DGame with TapDetector {
   Future<void> onLoad() async {
     super.onLoad();
 
-    final screen = screenToWorld(camera.viewport.effectiveSize);
+    final world = World();
+    final cameraComponent = CameraComponent(world: world);
+    await add(world);
+    await add(cameraComponent);
+
+    final screen = screenToWorld(cameraComponent.viewport.size);
 
     await add(Wall(position: Vector2(0, screen.y), size: Vector2(screen.x, 1)));
     await add(Wall(position: Vector2(0, 0), size: Vector2(1, screen.y)));

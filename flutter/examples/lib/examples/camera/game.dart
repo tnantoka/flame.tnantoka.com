@@ -11,6 +11,9 @@ class CameraGame extends FlameGame with KeyboardEvents {
   var _vy = 0.0;
   final _speed = 500.0;
 
+  final world = World();
+  late final CameraComponent cameraComponent;
+
   @override
   Future<void> onLoad() async {
     super.onLoad();
@@ -21,28 +24,27 @@ class CameraGame extends FlameGame with KeyboardEvents {
     );
 
     // <camera2>
+    final world = World();
+    cameraComponent = CameraComponent(world: world);
+    await add(world);
+    await add(cameraComponent);
+
     final map = Map();
-    await add(map);
+    world.add(map);
+    world.add(_rect);
 
-    camera.followComponent(
-      _rect,
-      worldBounds: Rect.fromLTWH(
-        0,
-        0,
-        map.width,
-        map.height,
-      ),
-    );
+    cameraComponent.follow(_rect);
     // </camera2>
-
-    await add(_rect);
   }
 
   @override
   void update(double dt) {
     super.update(dt);
 
-    _rect.position += Vector2(_vx, _vy) * dt;
+    _rect.position = Vector2(
+      (_rect.position.x + _vx * dt).clamp(0, Map.length - 100),
+      (_rect.position.y + _vy * dt).clamp(0, Map.length - 100),
+    );
   }
 
   @override
@@ -77,8 +79,10 @@ class CameraGame extends FlameGame with KeyboardEvents {
 class Map extends PositionComponent {
   Map()
       : super(
-          size: Vector2.all(1500),
+          size: Vector2.all(length),
         );
+
+  static const double length = 1500;
 
   @override
   void render(Canvas canvas) {

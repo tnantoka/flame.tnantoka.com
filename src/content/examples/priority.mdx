@@ -22,7 +22,7 @@ https://pub.dev/documentation/flame/latest/components/Component-class.html
 
 まずは描画するコンポーネントを作ります。
 
-`Tappable`を指定して、`onTapDown`で`priority`を変更しています。
+`TapCallbacks`を指定して、`onTapDown`で`priority`を変更しています。
 
 また`HasGameRef`によって`game`を参照できています。
 「全ての`Rect`が持つ`priority`の最大値」+1 を指定することで、最前面に描画されるようになります。
@@ -30,7 +30,9 @@ https://pub.dev/documentation/flame/latest/components/Component-class.html
 <ExampleCode file="priority/game.dart" label="priority1" />
 
 そして、この`Rect`を色と位置を変えて追加します。
-なお、`Tappable`を使っているのでゲームクラスに`HasTappables`の指定が必要です。
+なお、`TapCallbacks`を使っているのでゲームクラスに`HasTappablesBridge`の指定が必要です。
+
+※ 1.7 以前で使われていた`Tappable`、`HasTappables`は非推奨になりました。
 
 <ExampleCode file="priority/game.dart" label="priority2" />
 
