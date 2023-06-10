@@ -1,0 +1,35 @@
+---
+title: バリュールート
+id: 31
+date: 2023-06-11
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## ValueRoute
+
+[ルーター](/examples/router#router)では、単純な画面遷移をしましたが、
+`ValueRoute`を使うと、表示した Route から戻り値を受け取ることができます。
+
+ダイアログなどに便利です。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/router.html#valueroute
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/game/ValueRoute-class.html
+
+## 動かす
+
+`ValueRoute`を継承したダイアログを作ります。
+選択した`int`を返す単純ものです。
+
+値は `completeWith` で返します。
+
+<ExampleCode file="value_route/game.dart" label="value_route1" />
+
+あとは `pushAndWait` で表示して結果を受け取るだけです。
+
+<ExampleCode file="value_route/game.dart" label="value_route2" />
+
+これで数字を選択するダイアログができました。

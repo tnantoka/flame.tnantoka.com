@@ -39,6 +39,7 @@ final routes = {
   '/sprite_sheet': (context) => SpriteSheetPage(),
   '/glow': (context) => GlowPage(),
   '/flip': (context) => FlipPage(),
+  '/value_route': (context) => ValueRoutePage(),
 };
 
 class MyApp extends StatelessWidget {

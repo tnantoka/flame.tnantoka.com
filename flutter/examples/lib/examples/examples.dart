@@ -29,3 +29,4 @@ export 'camera/page.dart';
 export 'sprite_sheet/page.dart';
 export 'glow/page.dart';
 export 'flip/page.dart';
+export 'value_route/page.dart';
