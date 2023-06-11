@@ -6,7 +6,7 @@ import 'package:flame/game.dart';
 import 'package:flame/palette.dart';
 
 // <priority2>
-class PriorityGame extends FlameGame with HasTappablesBridge {
+class PriorityGame extends FlameGame {
   @override
   Future<void> onLoad() async {
     super.onLoad();
