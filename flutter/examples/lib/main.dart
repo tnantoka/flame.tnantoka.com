@@ -40,6 +40,7 @@ final routes = {
   '/glow': (context) => GlowPage(),
   '/flip': (context) => FlipPage(),
   '/value_route': (context) => ValueRoutePage(),
+  '/arc': (context) => ArcPage(),
 };
 
 class MyApp extends StatelessWidget {

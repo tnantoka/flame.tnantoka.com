@@ -1,0 +1,28 @@
+---
+title: 円弧
+id: 32
+date: 2023-06-18
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## drawArc
+
+[カスタムペインター](/examples/custom_painter#custom_painter)で`drawArc`を使えば円弧も描画できます。
+
+これは Flame ではなく Flutter（dart:ui）の機能ですが。
+
+API リファレンス  
+https://api.flutter.dev/flutter/dart-ui/Canvas/drawArc.html
+
+## 描画する
+
+基本は[カスタムペインター](/examples/custom_painter#custom_painter)と同じで、
+`paint`の中で`drawArc`を使います。
+
+<ExampleCode file="arc/game.dart" label="arc" />
+
+第 3 引数は`sweepAngle`で描画する角度（終了角度ではありません）,
+第 4 引数の`useCenter`は`true`にするとパスが閉じて扇形になります。
+
+これで円弧が描画できました。
