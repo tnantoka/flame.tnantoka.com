@@ -41,6 +41,7 @@ final routes = {
   '/flip': (context) => FlipPage(),
   '/value_route': (context) => ValueRoutePage(),
   '/arc': (context) => ArcPage(),
+  '/scale_mode': (context) => ScaleModePage(),
 };
 
 class MyApp extends StatelessWidget {

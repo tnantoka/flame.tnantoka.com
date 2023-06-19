@@ -1,0 +1,48 @@
+---
+title: スケールモード
+id: 33
+date: 2023-06-19
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+
+## スケールモードはない
+
+ゲーム開発フレームワークには「固定サイズでゲームを作っておき、画面サイズに合わせていい感じにリサイズしてくれる」機能があります。
+
+例えば[SpriteKit の scaleMode](https://developer.apple.com/documentation/spritekit/skscene/1519562-scalemode)や[Phaser3 の ScaleManager](https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html)を使えば、簡単に実現できます。
+
+残念ながら Flame には現状この機能がないようで、[Issue 上でのやりとり](https://github.com/flame-engine/flame/issues/116)を見る限り、当面実装されない気配です。
+
+この機能がないと複数画面サイズの対応が大変になるので、
+`PositionComponent`の`scale`と`FlameGame`の`onGameResize`を使って擬似的に実装してみます。
+
+公式ドキュメント  
+https://docs.flame-engine.org/latest/flame/components.html#scale  
+https://docs.flame-engine.org/latest/flame/components.html#component-lifecycle
+
+API リファレンス  
+https://pub.dev/documentation/flame/latest/components/PositionComponent/scale.html  
+https://pub.dev/documentation/flame/latest/game/FlameGame/onGameResize.html
+
+## 動かす
+
+まずはゲーム本体となる`PositionComponent`を固定サイズで用意します。
+今回はわかりやすく枠を描画するため`RectangleComponent`を使います。
+
+<ExampleCode file="scale_mode/game.dart" label="scale_mode1" />
+
+`onGameResize`ではゲームサイズ（=画面サイズ）に合わせて`scale`を変更します。
+リサイズ時の挙動を変えたい場合はここの動作を変えれば OK です。
+例えば画面一杯に拡大したい場合などもあるでしょう。
+
+<ExampleCode file="scale_mode/game.dart" label="scale_mode2" />
+
+これで準備は整いました。
+
+あとはコンポーネントをゲームではなく`_content`に`add`します。
+位置の計算などにも`game.size`ではなく`_content.size`を使います。
+
+<ExampleCode file="scale_mode/game.dart" label="scale_mode3" />
+
+これで画面サイズに応じてコンテンツが拡大・縮小されるようになりました。
