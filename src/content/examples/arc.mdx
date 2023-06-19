@@ -5,10 +5,12 @@ date: 2023-06-18
 ---
 
 import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
 
 ## drawArc
 
-[カスタムペインター](/examples/custom_painter#custom_painter)で`drawArc`を使えば円弧も描画できます。
+<ExampleLink slug="custom_painter" />
+で`drawArc`を使えば円弧も描画できます。
 
 これは Flame ではなく Flutter（dart:ui）の機能ですが。
 
@@ -19,7 +21,7 @@ https://api.flutter.dev/flutter/dart-ui/Canvas/drawArc.html
 
 ## 描画する
 
-基本は[カスタムペインター](/examples/custom_painter#custom_painter)と同じで、
+基本は<ExampleLink slug="custom_painter" />と同じで、
 `paint`の中で`drawArc`を使います。
 
 <ExampleCode file="arc/game.dart" label="arc" />

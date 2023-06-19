@@ -5,6 +5,7 @@ date: 2023-05-02
 ---
 
 import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
 
 ## position を変更する
 
@@ -19,8 +20,9 @@ https://pub.dev/documentation/flame/latest/components/PositionComponent-class.ht
 
 ## 動かす
 
-[円](/examples/circle#circle)を動かしてみます。
-今回は自動でずっと動くサンプルなので、毎フレーム呼び出される `update` メソッドを使います。
+<ExampleLink slug="circle" />
+を動かしてみます。 今回は自動でずっと動くサンプルなので、毎フレーム呼び出される `update`
+メソッドを使います。
 
 `update`メソッドは `FlameGame`やその他のコンポーネントの親である`Component`で定義されています。  
 今回は`CircleComponent`を継承せずに使っているので、`MoveGame`クラスの`update`を使っています。

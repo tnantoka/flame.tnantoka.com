@@ -5,6 +5,7 @@ date: 2023-05-23
 ---
 
 import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
 
 ## CameraComponent
 
@@ -30,7 +31,7 @@ https://pub.dev/documentation/flame/latest/camera/CameraComponent-class.html
 
 あとは`map`と`_rect`を`world`に`add`して、`follow`で`cameraComponent`が`_rect`を追いかけるようにします。
 
-なお、`_rect`は[キーボード](/examples/keyboard#keyboard)の例で使ったものと同じで、矢印キーで動きます。
+なお、`_rect`は<ExampleLink slug="keyboard" />の例で使ったものと同じで、矢印キーで動きます。
 
 <ExampleCode file="camera/game.dart" label="camera2" />
 

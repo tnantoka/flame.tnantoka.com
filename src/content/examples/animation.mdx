@@ -5,12 +5,13 @@ date: 2023-05-03
 ---
 
 import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
 import DemoAsset from '../../components/DemoAsset.astro';
 
 ## SpriteAnimationComponent
 
-[スプライト](/examples/sprite#sprite)では静止画を表示しましたが、
-`SpriteAnimationComponent`を使えばアニメーションさせることもできます。
+<ExampleLink slug="sprite" />
+では静止画を表示しましたが、 `SpriteAnimationComponent`を使えばアニメーションさせることもできます。
 
 他にも方法はありますが、`images.load`で読み込んだ横並びの画像から、
 `SpriteAnimationData.sequenced`でサイズ・数・秒することで、1 枚の画像からアニメーションを作れます。
@@ -21,7 +22,7 @@ https://docs.flame-engine.org/latest/flame/components.html#spriteanimationcompon
 API リファレンス  
 https://pub.dev/documentation/flame/latest/components/SpriteAnimationComponent-class.html
 
-なお [スプライトシート](/examples/sprite_sheet#sprit_esheet)を使ってもアニメーションを作れます。
+なお <ExampleLink slug="sprite_sheet" />を使ってもアニメーションを作れます。
 
 ## 動かす
 
@@ -29,7 +30,7 @@ https://pub.dev/documentation/flame/latest/components/SpriteAnimationComponent-c
 
 <DemoAsset file="explosion.png" />
 
-`pubspec.yml`は[スプライト](/examples/sprite#sprite)で設定済みなので修正不要です。
+`pubspec.yml`は<ExampleLink slug="sprite" />で設定済みなので修正不要です。
 
 それでは`SpriteAnimationComponent`を使います。
 `images.load`で先程の画像を読み込み、`SpriteAnimationData.sequenced`で設定を渡します。

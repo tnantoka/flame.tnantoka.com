@@ -5,13 +5,14 @@ date: 2023-05-03
 ---
 
 import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
 
 ## ButtonComponent
 
 テキストボタンを表示するには`ButtonComponent`を使います。
 
 `button`（普通の表示）と`buttonDown`（クリック中の表示）に任意の`PositionComponent`を指定できますが、
-ここでは[テキスト](/examples/text#text)を指定することで、テキストボタンにします。
+ここでは<ExampleLink slug="text" />を指定することで、テキストボタンにします。
 
 クリック時の処理は`onPressed`に指定します。
 

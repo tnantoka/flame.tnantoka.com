@@ -1,0 +1,13 @@
+---
+import * as fs from 'node:fs';
+import { getCollection } from 'astro:content';
+
+export interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const entry = (await getCollection('examples')).find((e) => e.slug === slug);
+---
+
+<a href={`/examples/${entry.slug}#${entry.slug}`}>{entry.data.title}</a>
