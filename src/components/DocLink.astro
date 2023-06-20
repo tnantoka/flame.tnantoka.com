@@ -1,0 +1,15 @@
+---
+export interface Props {
+  document?: string;
+  reference?: string;
+}
+
+const { document, reference } = Astro.props;
+const href = document || reference;
+---
+
+<span class="badge bg-secondary me-1 rounded-0">
+  {document ? '公式ドキュメント' : 'APIリファレンス'}
+</span>
+<a href={href}>{href}</a>
+<br />

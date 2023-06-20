@@ -33,6 +33,7 @@ const { exampleEntries } = Astro.props;
                 >
                   <div class="fs-4">{entry.data.title}</div>
                   <div class="text-truncate">{stripMarkdown(entry.body)}</div>
+                  <div class="d-none">{entry.slug}</div>
                 </a>
               ))
           }

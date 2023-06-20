@@ -5,6 +5,7 @@ date: 2023-06-19
 ---
 
 import ExampleCode from '../../components/ExampleCode.astro';
+import DocLink from '../../components/DocLink.astro';
 
 ## スケールモードはない
 
@@ -17,14 +18,10 @@ import ExampleCode from '../../components/ExampleCode.astro';
 この機能がないと複数画面サイズの対応が大変になるので、
 `PositionComponent`の`scale`と`FlameGame`の`onGameResize`を使って擬似的に実装してみます。
 
-公式ドキュメント  
-https://docs.flame-engine.org/latest/flame/components.html#scale  
-https://docs.flame-engine.org/latest/flame/components.html#component-lifecycle
-
-API リファレンス  
-https://pub.dev/documentation/flame/latest/components/PositionComponent/scale.html  
-https://pub.dev/documentation/flame/latest/game/FlameGame/onGameResize.html
-
+<DocLink document="https://docs.flame-engine.org/latest/flame/components.html#scale" />
+<DocLink document="https://docs.flame-engine.org/latest/flame/components.html#component-lifecycle" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/components/PositionComponent/scale.html" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/game/FlameGame/onGameResize.html" />
 ## 動かす
 
 まずはゲーム本体となる`PositionComponent`を固定サイズで用意します。

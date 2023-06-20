@@ -6,11 +6,13 @@ date: 2023-05-01
 
 import ExampleCode from '../../components/ExampleCode.astro';
 import ExampleLink from '../../components/ExampleLink.astro';
+import DocLink from '../../components/DocLink.astro';
 
 Flame で何もない画面を動かすところまでです。
 
-公式ドキュメントのチュートリアルにも同様の内容があります。  
-https://docs.flame-engine.org/latest/tutorials/bare_flame_game.html
+公式ドキュメントのチュートリアルにも同様の内容があります。
+
+<DocLink document="https://docs.flame-engine.org/latest/tutorials/bare_flame_game.html" />
 
 ## Flutter 導入
 
@@ -44,8 +46,9 @@ Flame のゲームは Flutter の Widget になっています。
 GameWidget(game: game)
 ```
 
-`game`以外の引数は API リファレンスに載っています。`overlayBuilderMap`はよく使うと思います。  
-https://pub.dev/documentation/flame/latest/game/GameWidget-class.html
+`game`以外の引数は API リファレンスに載っています。`overlayBuilderMap`はよく使うと思います。
+
+<DocLink reference="https://pub.dev/documentation/flame/latest/game/GameWidget-class.html" />
 
 ## FlameGame
 
@@ -56,8 +59,9 @@ https://pub.dev/documentation/flame/latest/game/GameWidget-class.html
 
 <ExampleCode file="hello/game.dart" />
 
-API リファレンスはこちらです。  
-https://pub.dev/documentation/flame/latest/game/FlameGame-class.html
+API リファレンスはこちらです。
+
+<DocLink reference="https://pub.dev/documentation/flame/latest/game/FlameGame-class.html" />
 
 ## 動かす
 
