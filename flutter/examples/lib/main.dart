@@ -42,6 +42,7 @@ final routes = {
   '/value_route': (context) => ValueRoutePage(),
   '/arc': (context) => ArcPage(),
   '/scale_mode': (context) => ScaleModePage(),
+  '/sprite_widget': (context) => const SpriteWidgetPage(),
 };
 
 class MyApp extends StatelessWidget {

@@ -1,0 +1,41 @@
+---
+title: スプライトウィジェット
+id: 33
+date: 2023-06-23
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## SpriteWidget
+
+FlameGame の外で Flame のスプライトを使いたいことがあります。
+例えば UI を普通の Flutter で作っていて、その中でキャラを表示したい場合などです。
+
+`SpriteWidget`を使えば、スプライトを Widget として配置できます。
+
+ちなみに、Flutter 製のゲームフレームワークの 1 つ [SpriteWidget](https://github.com/spritewidget/spritewidget) とは関係ありません。
+
+これも Flame とは関係ない話ですが、Flame を使ってないアプリでもスプライト画像から Wiget を作りたくなることがあるので、そのための[Sprite](https://pub.dev/packages/sprite)というパッケージを開発して公開しています。スプライトを表示するだけの軽量ライブラリです。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/other/widgets.html#spritewidget" />
+<DocLink document="https://docs.flame-engine.org/latest/flame/other/widgets.html#spriteanimationwidget" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/widgets/SpriteWidget-class.html" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/widgets/SpriteAnimationWidget-class.html" />
+
+## 動かす
+
+今回は FlameGame は使わず普通の Widget です。
+
+静止画像の場合はこのように書きます。
+
+<ExampleCode file="sprite_widget/page.dart" label="sprite_widget1" />
+
+アニメーションの場合はこうです。
+
+<ExampleCode file="sprite_widget/page.dart" label="sprite_widget2" />
+
+`SizedBox`で大きさを指定している以外は、どちらも<ExampleLink slug="sprite" />や<ExampleLink slug="animation" />と同様の使い方です。
+
+これで Flutter の UI の中に Flame のスプライトを埋め込むことができました。

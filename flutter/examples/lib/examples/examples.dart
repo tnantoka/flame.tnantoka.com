@@ -32,3 +32,4 @@ export 'flip/page.dart';
 export 'value_route/page.dart';
 export 'arc/page.dart';
 export 'scale_mode/page.dart';
+export 'sprite_widget/page.dart';
