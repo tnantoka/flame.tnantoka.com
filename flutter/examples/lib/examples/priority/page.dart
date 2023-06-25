@@ -9,8 +9,6 @@ class PriorityPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: GameWidget(game: game),
-    );
+    return GameWidget(game: game);
   }
 }

@@ -10,13 +10,11 @@ class OverlayPage extends StatelessWidget {
   // <overlay2>
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: GameWidget<OverlayGame>(
-        game: game,
-        overlayBuilderMap: {
-          'modal': (_, game) => Modal(game: game),
-        },
-      ),
+    return GameWidget<OverlayGame>(
+      game: game,
+      overlayBuilderMap: {
+        'modal': (_, game) => Modal(game: game),
+      },
     );
   }
   // </overlay2>
