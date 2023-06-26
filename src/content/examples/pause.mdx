@@ -1,0 +1,43 @@
+---
+title: ポーズ
+id: 34
+date: 2023-06-26
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## pauseEngine
+
+FlameGame に `pauseEngine`というメソッドがあります。
+これを使うとゲームの動きを止めることができます。
+復帰させる時は `resumeEngine` を呼びます。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/game.html#pause-resuming-stepping-game-execution" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/game/Game/pauseEngine.html" />
+
+## stopTime
+
+<ExampleLink slug="router" />
+で使った`Route`に`stopTime`というメソッドがあります。 こちらは今表示している`Route`の動きを止めることができます。
+復帰させる時は`resumeTime`を呼びます。
+
+<DocLink reference="https://pub.dev/documentation/flame/latest/game/Route/stopTime.html" />
+
+こちらはゲーム全体ではなく一部の`Route`を止めるので、
+「別の半透明な`Route`を表示させて、そこでアニメーションを表示する」などの使い方ができます。
+
+以下のドキュメントに半透明なアニメーションと共にポーズさせる例が載っています。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/router.html#routercomponent" />
+
+## 動かす
+
+単純に `stopEngine`、`stopTime`を呼び出す例です。
+
+<ExampleCode file="pause/page.dart" />
+
+どちらのボタンをクリックしてもカウントが止まることがわかると思います。
+
+これで ポーズの実装ができました。

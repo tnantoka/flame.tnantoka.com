@@ -33,3 +33,4 @@ export 'value_route/page.dart';
 export 'arc/page.dart';
 export 'scale_mode/page.dart';
 export 'sprite_widget/page.dart';
+export 'pause/page.dart';

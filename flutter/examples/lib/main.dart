@@ -43,6 +43,7 @@ final routes = {
   '/arc': (context) => ArcPage(),
   '/scale_mode': (context) => ScaleModePage(),
   '/sprite_widget': (context) => const SpriteWidgetPage(),
+  '/pause': (context) => PausePage(),
 };
 
 class MyApp extends StatelessWidget {
