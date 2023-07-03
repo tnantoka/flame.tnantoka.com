@@ -4,6 +4,7 @@ date: 2023-05-20
 ---
 
 import ExampleLayout from '../layouts/ExampleLayout.astro';
+import DocLink from '../components/DocLink.astro';
 
 <ExampleLayout title={frontmatter.title} date={frontmatter.date} noDemo>
 
@@ -11,11 +12,11 @@ import ExampleLayout from '../layouts/ExampleLayout.astro';
 
 昔見かけた[SpriteKit 製の ColorWheel](https://github.com/AngelaRucci/ColorWheel)というゲームを移植してみたもの。
 
-デモ  
-https://color-wheel-acc.pages.dev/
-
-ソースコード  
-https://github.com/tnantoka/color_wheel
+<DocLink document="https://color-wheel-acc.pages.dev/" label="デモ" />
+<DocLink
+  document="https://github.com/tnantoka/color_wheel"
+  label="ソースコード"
+/>
 
 ## 人工生命っぽいもの
 
@@ -41,31 +42,28 @@ https://github.com/tnantoka/color_wheel
   />
 </div>
 
-デモ  
-https://flal.pages.dev/
-
-ソースコード  
-https://github.com/tnantoka/flal
+<DocLink document="https://flal.pages.dev/" label="デモ" />
+<DocLink document="https://github.com/tnantoka/flal" label="ソースコード" />
 
 ## retro_lines サンプル
 
 [retro_lines](https://v3x3d.itch.io/retro-lines)といういい感じの CC0 な素材を見つけたので、試しに使ってみたもの。  
 （ちゃんとしたゲームにはなっていない）
 
-デモ  
-https://retro-lines.pages.dev/
-
-ソースコード  
-https://github.com/tnantoka/retro_lines
+<DocLink document="https://retro-lines.pages.dev/" label="デモ" />
+<DocLink
+  document="https://github.com/tnantoka/retro_lines"
+  label="ソースコード"
+/>
 
 ## industrial サンプル
 
 [industrial](https://0x72.itch.io/16x16-industrial-tileset)という CC0 素材のサンプル。
 
-デモ  
-https://industrial.pages.dev/
-
-ソースコード  
-https://github.com/tnantoka/industrial
+<DocLink document="https://industrial.pages.dev/" label="デモ" />
+<DocLink
+  document="https://github.com/tnantoka/industrial"
+  label="ソースコード"
+/>
 
 </ExampleLayout>

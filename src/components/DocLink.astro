@@ -4,12 +4,12 @@ export interface Props {
   reference?: string;
 }
 
-const { document, reference } = Astro.props;
+const { document, reference, label } = Astro.props;
 const href = document || reference;
 ---
 
 <span class="badge bg-secondary me-1 rounded-0">
-  {document ? '公式ドキュメント' : 'APIリファレンス'}
+  {label || (document ? '公式ドキュメント' : 'APIリファレンス')}
 </span>
 <a href={href}>{href}</a>
 <br />
