@@ -1,0 +1,32 @@
+---
+title: タイムスケール
+id: 35
+date: 2023-07-05
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## timeScale
+
+`HasTimeScale` mixin に `timeScale`というプロパティがあります。
+これを使うとゲームの速度を変更することができます。
+大きくすれば速く、小さくすれば遅くなります。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/other/util.html#time-scale" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/components/HasTimeScale/timeScale.html" />
+
+## 動かす
+
+アニメーションは <ExampleLink slug="animation" /> と同じ爆発の例を使います。
+
+`HasTimeScale` mixin を使用するため、`with`で指定します。
+
+<ExampleCode file="time_scale/game.dart" label="time_scale1" />
+
+あとはボタンをクリックした時に`timeScale`を変更します。
+
+<ExampleCode file="time_scale/game.dart" label="time_scale2" />
+
+これで、ゲーム速度の変更ができました。

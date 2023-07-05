@@ -44,6 +44,7 @@ final routes = {
   '/scale_mode': (context) => ScaleModePage(),
   '/sprite_widget': (context) => const SpriteWidgetPage(),
   '/pause': (context) => PausePage(),
+  '/time_scale': (context) => TimeScalePage(),
 };
 
 class MyApp extends StatelessWidget {
