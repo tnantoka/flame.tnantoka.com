@@ -1,5 +1,5 @@
 ---
-title: キーボード
+title: キーボードイベント
 id: 26
 date: 2023-05-22
 ---
@@ -19,12 +19,12 @@ import DocLink from '../../components/DocLink.astro';
 まずはキーボードで動かす四角形を準備します。
 `update`で`vx/vy`を加算することで、毎フレーム移動します。
 
-<ExampleCode file="keyboard/game.dart" label="keyboard1" />
+<ExampleCode file="keyboard_events/game.dart" label="keyboard_events1" />
 
 次に`KeyboardEvents`ミックスインを使ってキーボード入力を処理します。
 
 `onKeyEvent`の中で、キーが離されたら`vx/vy`を 0 に、矢印キーが入力されていたら`vx/vy`を ±1 にしています。
 
-<ExampleCode file="keyboard/game.dart" label="keyboard2" />
+<ExampleCode file="keyboard_events/game.dart" label="keyboard_events2" />
 
 これでキーボード入力を処理できるようになりました。

@@ -12,10 +12,12 @@ class TapGame extends FlameGame with TapDetector {
   void onTapDown(TapDownInfo info) {
     super.onTapDown(info);
 
-    add(CircleComponent(
-      position: info.eventPosition.game,
-      radius: 10,
-      anchor: Anchor.center,
-    ));
+    add(
+      CircleComponent(
+        position: info.eventPosition.game,
+        radius: 10,
+        anchor: Anchor.center,
+      ),
+    );
   }
 }

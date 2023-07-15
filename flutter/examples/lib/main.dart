@@ -34,7 +34,8 @@ final routes = {
   '/screen_hitbox': (context) => ScreenHitboxPage(),
   '/router': (context) => RouterPage(),
   '/priority': (context) => PriorityPage(),
-  '/keyboard': (context) => KeyboardPage(),
+  '/keyboard_events': (context) => KeyboardEventsPage(),
+  '/keyboard_listener': (context) => KeyboardListenerPage(),
   '/camera': (context) => CameraPage(),
   '/sprite_sheet': (context) => SpriteSheetPage(),
   '/glow': (context) => GlowPage(),
@@ -45,6 +46,7 @@ final routes = {
   '/sprite_widget': (context) => const SpriteWidgetPage(),
   '/pause': (context) => PausePage(),
   '/time_scale': (context) => TimeScalePage(),
+  '/ripple': (context) => RipplePage(),
 };
 
 class MyApp extends StatelessWidget {

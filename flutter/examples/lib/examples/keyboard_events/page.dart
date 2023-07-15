@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
 import 'game.dart';
 
-class KeyboardPage extends StatelessWidget {
-  KeyboardPage({super.key});
+class KeyboardEventsPage extends StatelessWidget {
+  KeyboardEventsPage({super.key});
 
-  final game = KeyboardGame();
+  final game = KeyboardEventsGame();
 
   @override
   Widget build(BuildContext context) {

@@ -1,0 +1,30 @@
+---
+title: 波紋
+id: 36
+date: 2023-07-06
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## 波紋
+
+公式ドキュメントのタップにあった波紋っぽいサンプルが良かったので簡略化したものを作りました。
+ソシャゲでタップ位置を示すのに使われているのを見かけます。
+
+CircleComponent（<ExampleLink slug="circle" />参照）を継承して、`update`で`radius`を変更すれば簡単に作れます。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/inputs/tap_events.html#demo" />
+
+## 動かす
+
+`CircleComponent`を継承した`Ripple`を作ります。
+
+<ExampleCode file="ripple/game.dart" label="ripple1" />
+
+あとはタップした位置にこれを`add`するだけです。
+
+<ExampleCode file="ripple/game.dart" label="ripple2" />
+
+これで、波紋っぽい表現ができました。

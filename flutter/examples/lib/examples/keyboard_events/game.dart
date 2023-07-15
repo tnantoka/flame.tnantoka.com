@@ -4,8 +4,8 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class KeyboardGame extends FlameGame with KeyboardEvents {
-  // <keyboard1>
+class KeyboardEventsGame extends FlameGame with KeyboardEvents {
+  // <keyboard_events1>
   late RectangleComponent _rect;
 
   var _vx = 0.0;
@@ -30,9 +30,9 @@ class KeyboardGame extends FlameGame with KeyboardEvents {
 
     _rect.position += Vector2(_vx, _vy) * dt;
   }
-  // </keyboard1>
+  // </keyboard_events1>
 
-  // <keyboard2>
+  // <keyboard_events2>
   @override
   KeyEventResult onKeyEvent(
       RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
@@ -59,5 +59,5 @@ class KeyboardGame extends FlameGame with KeyboardEvents {
 
     return KeyEventResult.ignored;
   }
-  // </keyboard2>
+  // </keyboard_events2>
 }
