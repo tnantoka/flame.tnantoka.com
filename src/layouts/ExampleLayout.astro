@@ -8,11 +8,16 @@ import Search from '../components/Search.astro';
 const { exampleName } = Astro.params;
 const exampleEntries = await getCollection('examples');
 const entry = exampleEntries.find((entry) => entry.slug === exampleName);
-const { title, noDemo = false, date = entry && entry.data.date } = Astro.props;
+const {
+  title,
+  noDemo = false,
+  date = entry && entry.data.date,
+  bodyClass = '',
+} = Astro.props;
 const host = import.meta.env.PROD ? '/' : 'http://localhost:5555/';
 ---
 
-<Layout title={title}>
+<Layout title={title} bodyClass={bodyClass}>
   <div class="container-fluid h-100">
     <div class="row h-100">
       <div class="col-2">
@@ -49,3 +54,9 @@ const host = import.meta.env.PROD ? '/' : 'http://localhost:5555/';
 
   <Search exampleEntries={exampleEntries} />
 </Layout>
+
+<style is:global lang="scss">
+  .games h2 {
+    margin-top: 2rem;
+  }
+</style>
