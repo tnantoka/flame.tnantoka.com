@@ -13,9 +13,19 @@ const host = import.meta.env.PROD
       exampleName ? (
         <iframe class="h-100 w-100" src={`${host}#/${exampleName}`} />
       ) : (
-        <div class="d-flex justify-content-center align-items-center text-white fs-3">
-          Live Demo
-        </div>
+        <>
+          <div class="d-flex justify-content-center text-white fs-3">
+            <span class="mt-5">Live Demo</span>
+          </div>
+          <iframe
+            class="h-100 w-100"
+            src={
+              exampleName
+                ? `${host}#/${exampleName}`
+                : 'https://deskwitch.pages.dev/#/'
+            }
+          />
+        </>
       )
     }
   </div>
