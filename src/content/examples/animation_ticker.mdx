@@ -1,0 +1,30 @@
+---
+title: アニメーションティッカー
+id: 37
+date: 2023-07-20
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DemoAsset from '../../components/DemoAsset.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## SpriteAnimationTicker
+
+以前<ExampleLink slug="animation" />で、`SpriteAnimationComponent`を使ってアニメーションを表示しました。
+`SpriteAnimationTicker` を使えば、アニメーションの終了を待つなど状況に応じて処理ができます。
+
+`SpriteAnimationTicker`は`SpriteAnimationComponent`の`animationTicker`プロパティで取得できます。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/components.html#spriteanimationcomponent" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/sprite/SpriteAnimationTicker-class.html" />
+
+## 動かす
+
+タップした位置にアニメーションを表示し、アニメーションが終わったら四角形を表示するようにします。
+
+`animationTicker`の`completed`を`await`を待つことで実現できます。
+
+<ExampleCode file="animation_ticker/game.dart" label="animation_ticker" />
+
+これでアニメーションの状況に応じた処理ができます。
