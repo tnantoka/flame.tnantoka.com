@@ -1,0 +1,30 @@
+---
+title: ローディングビルダー
+id: 38
+date: 2023-07-21
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DemoAsset from '../../components/DemoAsset.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## LoadingBuilder
+
+`GameWidget`の`loadingBuilder`プロパティに Widget を指定することで、
+ゲームがローディングされるまでの表示を変更することができます。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-loadingBuilder" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/game/GameWidget/loadingBuilder.html" />
+
+## 表示する
+
+`GameWidget`の`loadingBuilder`プロパティで`CircularProgressIndicator`を返します。
+
+<ExampleCode file="loading/page.dart" label="loading1" />
+
+ローディング中であることがわかりやすいように`Game`の`onLoad`で 10 秒待った後、`Loaded`を表示します。
+
+<ExampleCode file="loading/game.dart" label="loading2" />
+
+これでローディング画面が表示できます。

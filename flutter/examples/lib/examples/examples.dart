@@ -38,3 +38,4 @@ export 'pause/page.dart';
 export 'time_scale/page.dart';
 export 'ripple/page.dart';
 export 'animation_ticker/page.dart';
+export 'loading/page.dart';

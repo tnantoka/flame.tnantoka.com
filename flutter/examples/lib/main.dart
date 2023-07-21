@@ -48,6 +48,7 @@ final routes = {
   '/time_scale': (context) => TimeScalePage(),
   '/ripple': (context) => RipplePage(),
   '/animation_ticker': (context) => AnimationTickerPage(),
+  '/loading': (context) => LoadingPage(),
 };
 
 class MyApp extends StatelessWidget {
