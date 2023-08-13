@@ -5,7 +5,7 @@ import 'package:flame/game.dart';
 import 'package:flame/palette.dart';
 
 // <collision3>
-class CollisionGame extends FlameGame with TapDetector, HasCollisionDetection {
+class CollisionGame extends FlameGame with TapCallbacks, HasCollisionDetection {
   @override
   Future<void> onLoad() async {
     super.onLoad();
@@ -19,11 +19,11 @@ class CollisionGame extends FlameGame with TapDetector, HasCollisionDetection {
   }
 
   @override
-  void onTapDown(TapDownInfo info) {
-    super.onTapDown(info);
+  void onTapDown(TapDownEvent event) {
+    super.onTapDown(event);
 
     add(
-      Ball(position: info.eventPosition.game),
+      Ball(position: event.localPosition),
     );
   }
 }

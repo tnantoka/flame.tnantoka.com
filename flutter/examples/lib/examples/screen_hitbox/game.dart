@@ -2,12 +2,12 @@ import 'dart:math';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flame/events.dart';
 import 'package:flame/game.dart';
-import 'package:flame/input.dart';
 import 'package:flame/palette.dart';
 
 class ScreenHitboxGame extends FlameGame
-    with TapDetector, HasCollisionDetection {
+    with TapCallbacks, HasCollisionDetection {
   final _random = Random();
 
   // <screen_hitbox1>
@@ -21,12 +21,12 @@ class ScreenHitboxGame extends FlameGame
 
   // <screen_hitbox2>
   @override
-  void onTapDown(TapDownInfo info) {
-    super.onTapDown(info);
+  void onTapDown(TapDownEvent event) async {
+    super.onTapDown(event);
 
     add(
       Ball(
-        position: info.eventPosition.game,
+        position: event.localPosition,
         vx: _random.nextDouble() * 200 - 100,
         vy: _random.nextDouble() * 200 - 100,
       ),

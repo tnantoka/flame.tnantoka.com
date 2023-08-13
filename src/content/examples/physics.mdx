@@ -5,6 +5,7 @@ date: 2023-05-03
 ---
 
 import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
 import DemoAsset from '../../components/DemoAsset.astro';
 import DocLink from '../../components/DocLink.astro';
 
@@ -36,6 +37,8 @@ Flame 向けには[flame_forge2d](https://pub.dev/packages/flame_forge2d)が用�
 <ExampleCode file="physics/game.dart" label="physics2" />
 
 `Forge2dGame`を継承したゲームクラスで、壁やボールを生成します。
+
+なお、`Forge2DGame`は<ExampleLink slug="tap" />で使った`TapCallbacks`がうまく動かないので`TapDetector`を利用しています。
 
 <ExampleCode file="physics/game.dart" label="physics3" />
 

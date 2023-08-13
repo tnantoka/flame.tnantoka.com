@@ -5,7 +5,7 @@ import 'package:flame/effects.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 
-class EffectGame extends FlameGame with TapDetector {
+class EffectGame extends FlameGame with TapCallbacks {
   final _random = Random();
   late RectangleComponent _rect;
 
@@ -23,8 +23,8 @@ class EffectGame extends FlameGame with TapDetector {
   }
 
   @override
-  void onTap() {
-    super.onTap();
+  void onTapDown(TapDownEvent event) {
+    super.onTapDown(event);
 
     final effect = MoveByEffect(
       Vector2(

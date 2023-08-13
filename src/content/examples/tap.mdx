@@ -8,18 +8,33 @@ import ExampleCode from '../../components/ExampleCode.astro';
 import ExampleLink from '../../components/ExampleLink.astro';
 import DocLink from '../../components/DocLink.astro';
 
-## TapDetector
+## TapCallbacks
 
-`TapDetector`ミックスインを使うとタップを検出できます。
+`TapCallbacks`ミックスインを使うとタップを検出できます。
 
 例えば`onTapDown`にはタップしたときの処理を書くことができます。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/inputs/tap_events.html" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/events/TapCallbacks-mixin.html" />
+
+なお、よりジェスチャー検出機能の一部として `TapDetector` というミックスインもありますが、
+以下の記述があるので、基本的には `TapCallbacks` を使う方が良いようです。
+
+> This document describes the new tap events API. The old (legacy) approach, which is still supported, is described in Gesture Input.
+
+`TapCallbacks`は`containsLocalPoint`メソッドを実装しているコンポーネントでしか使えないので、
+それが満たせない場合などに`TapDetector`を使うことになるでしょう。
+
+`TapDetetor`については以下を参照してください。
+
+`event.localPosition`を`info.eventPosition.game`に変更すれば`TapCallbacks`と同じように使えます。
 
 <DocLink document="https://docs.flame-engine.org/latest/flame/inputs/gesture_input.html#example" />
 <DocLink reference="https://pub.dev/documentation/flame/latest/input/TapDetector-mixin.html" />
 
 ## 動かす
 
-Game クラスに`with TapDetector`を追加し、`onTapDown`メソッドでタップ時の処理を書きます。  
+Game クラスに`with TapCallbacks`を追加し、`onTapDown`メソッドでタップ時の処理を書きます。  
 今回はタップした場所に<ExampleLink slug="circle" />を表示しています。
 
 <ExampleCode file="tap/game.dart" />

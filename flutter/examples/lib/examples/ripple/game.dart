@@ -3,7 +3,7 @@ import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
-class RippleGame extends FlameGame with TapDetector {
+class RippleGame extends FlameGame with TapCallbacks {
   @override
   Future<void> onLoad() async {
     super.onLoad();
@@ -11,11 +11,11 @@ class RippleGame extends FlameGame with TapDetector {
 
   // <ripple2>
   @override
-  void onTapDown(TapDownInfo info) {
-    super.onTapDown(info);
+  void onTapDown(TapDownEvent event) {
+    super.onTapDown(event);
 
     add(
-      Ripple(position: info.eventPosition.game),
+      Ripple(position: event.localPosition),
     );
   }
   // </ripple2>

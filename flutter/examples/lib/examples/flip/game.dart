@@ -2,7 +2,7 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 
-class FlipGame extends FlameGame with TapDetector {
+class FlipGame extends FlameGame with TapCallbacks {
   late final SpriteComponent _sprite;
   @override
   Future<void> onLoad() async {
@@ -18,8 +18,8 @@ class FlipGame extends FlameGame with TapDetector {
   }
 
   @override
-  void onTap() {
-    super.onTap();
+  void onTapDown(TapDownEvent event) {
+    super.onTapDown(event);
 
     _sprite.flipHorizontally();
   }

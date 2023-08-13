@@ -5,17 +5,17 @@ import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame/particles.dart';
 
-class ParticleGame extends FlameGame with TapDetector {
+class ParticleGame extends FlameGame with TapCallbacks {
   final _random = Random();
 
   @override
-  void onTapDown(TapDownInfo info) async {
-    super.onTapDown(info);
+  void onTapDown(TapDownEvent event) async {
+    super.onTapDown(event);
 
     final sprite = await Sprite.load('particle.png');
     add(
       ParticleSystemComponent(
-        position: info.eventPosition.game,
+        position: event.localPosition,
         particle: Particle.generate(
           count: 32,
           generator: (i) {
