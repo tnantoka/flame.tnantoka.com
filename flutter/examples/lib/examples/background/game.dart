@@ -13,6 +13,7 @@ class BackgroundGame extends FlameGame {
         size: Vector2.all(100),
         position: size * 0.5,
         anchor: Anchor.center,
+        paint: Paint()..color = Colors.white.withAlpha(150),
       ),
     );
   }
