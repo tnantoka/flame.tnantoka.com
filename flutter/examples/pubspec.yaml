@@ -17,10 +17,10 @@ dependencies:
   flame: ^1.8.2
 # </hello>
 # <physics>
-  flame_forge2d: ^0.14.0
+  flame_forge2d: ^0.14.1+1
 # </physics>
 # <sound1>
-  flame_audio: ^2.0.3
+  flame_audio: ^2.0.5
 # </sound1>
 
 dev_dependencies:
