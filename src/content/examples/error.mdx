@@ -1,0 +1,31 @@
+---
+title: エラービルダー
+id: 39
+date: 2023-08-14
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DemoAsset from '../../components/DemoAsset.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## ErrorBuilder
+
+`GameWidget`の`errorBuilder`プロパティに Widget を指定することで、
+ゲームがエラーになった時の表示を変更することができます。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-errorBuilder" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/game/GameWidget/errorBuilder.html" />
+
+## 表示する
+
+`GameWidget`の`errorBuilder`プロパティで`Text`を返します。
+待ち時間がわかりやすいように<ExampleLink slug="loading" />と同じ設定もしています。
+
+<ExampleCode file="error/page.dart" label="error1" />
+
+10 秒待った後、`Error`を`throw`します。
+
+<ExampleCode file="error/game.dart" label="error2" />
+
+この方法でエラー画面が表示できます。

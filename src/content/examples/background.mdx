@@ -1,0 +1,32 @@
+---
+title: バックグラウンドビルダー
+id: 40
+date: 2023-08-15
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DemoAsset from '../../components/DemoAsset.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## BackgroundBuilder
+
+`GameWidget`の`backgroundBuilder`プロパティに Widget を指定することで、
+背景に表示される内容を指定することができます。
+
+ここで指定した内容は `Game.backgroundColor` より前面に、ゲーム内の要素よりは後ろに表示されます。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/game_widget.html#GameWidget-backgroundBuilder" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/game/GameWidget/backgroundBuilder.html" />
+
+## 表示する
+
+`GameWidget`の`backgroundBuilder`プロパティで`Text`を返します。
+
+<ExampleCode file="background/page.dart" label="background1" />
+
+ゲームでは背景色をグレーにし、中央に<ExampleLink slug="rect" />を表示します。
+
+<ExampleCode file="background/game.dart" label="background2" />
+
+この方法で背景画面を変更できます。
