@@ -22,6 +22,9 @@ dependencies:
 # <sound1>
   flame_audio: ^2.0.5
 # </sound1>
+# <pathfinding>
+  pathfinding: ^3.0.1
+# </pathfinding>
 
 dev_dependencies:
   flutter_test:

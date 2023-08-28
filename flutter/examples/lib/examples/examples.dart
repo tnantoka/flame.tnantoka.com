@@ -45,6 +45,7 @@ import 'animation_ticker/page.dart';
 import 'loading/page.dart';
 import 'error/page.dart';
 import 'background/page.dart';
+import 'pathfinding/page.dart';
 
 final Map<String, Widget Function(BuildContext)> routes = {
   '/': (context) => const MyHomePage(),
@@ -91,4 +92,5 @@ final Map<String, Widget Function(BuildContext)> routes = {
   '/loading': (context) => LoadingPage(),
   '/error': (context) => ErrorPage(),
   '/background': (context) => BackgroundPage(),
+  '/pathfinding': (context) => PathfindingPage(),
 };

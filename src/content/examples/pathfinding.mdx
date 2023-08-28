@@ -1,0 +1,55 @@
+---
+title: パスファインディング
+id: 41
+date: 2023-08-28
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DemoAsset from '../../components/DemoAsset.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## PathFinding.dart
+
+[PathFinding.dart](https://pub.dev/packages/pathfinding)パッケージを使うとマップないの 2 点間の道順を計算することができます。
+これは Flame の機能ではありませんが、ゲームでよく使われると思うので紹介します。
+（タップした場所まで障害物を避けつつ移動する場合など）
+
+`Grid`でマップを準備して、`AStarFinder`か`JumpPointFinder`でパスを計算します。
+
+<DocLink document="https://pub.dev/packages/pathfinding" />
+<DocLink reference="https://pub.dev/documentation/pathfinding/latest/" />
+
+## 動かす
+
+まず`pubspec.yaml`に`pathfinding`パッケージを追加します。
+
+<ExampleCode
+  file="pubspec.yaml"
+  label="pathfinding"
+  dir="examples"
+  lang="yaml"
+/>
+
+あとはコードを書いていきます。
+
+横 10 マス、縦 10 マスのマップ（`_cells`）を作ります。初期値は全部道である 0 で埋めています。
+
+<ExampleCode file="pathfinding/game.dart" label="pathfinding1" />
+
+ランダムで壁を作るために 1 にします。
+また壁以外の点からランダムでスタート、ゴールを選びます。
+
+<ExampleCode file="pathfinding/game.dart" label="pathfinding2" />
+
+次が pathfinding の本番です。
+用意したマップ、スタート、ゴールからパスを見つけます。
+
+<ExampleCode file="pathfinding/game.dart" label="pathfinding3" />
+
+最後に render で画面に表示します。
+道は白、壁はグレー、スタートは緑、ゴールは赤、パスを青で描画します。
+
+<ExampleCode file="pathfinding/game.dart" label="pathfinding4" />
+
+このようにしてパスファインディングを実装できます。

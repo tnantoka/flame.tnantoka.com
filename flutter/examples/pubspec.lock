@@ -312,6 +312,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.6"
+  pathfinding:
+    dependency: "direct main"
+    description:
+      name: pathfinding
+      sha256: "5491d820f2f412445f05450dd15c44d1986f4f5f6763a46718540a8fa085cadd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   platform:
     dependency: transitive
     description:
