@@ -1,0 +1,50 @@
+---
+title: タイマー
+id: 42
+date: 2023-09-08
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DemoAsset from '../../components/DemoAsset.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## TimerComponent
+
+TimerComponent を使うと、一定時間ごとに処理を繰り返したり、一定時間後に処理を実行したりできます。
+
+<DocLink document="https://docs.flame-engine.org/latest/flame/other/util.html#timer" />
+<DocLink reference="https://pub.dev/documentation/flame/latest/components/TimerComponent-class.html" />
+
+## Flutter 標準機能との違い
+
+`Timer.periodic`や`Future.delayed`と同じ機能に見えますが、違いがあります。
+内部実装を見ると、Flame の<ExampleLink slug="lifecycle" />に合わせて処理されるようになっているので、<ExampleLink slug="pause" />の際に止まるなどのメリットがあります。
+基本的にはこちらを使う方がよいでしょう。
+
+<DocLink
+  reference="https://github.com/flame-engine/flame/blob/v1.8.2/packages/flame/lib/src/components/timer_component.dart"
+  label="内部実装"
+/>
+<DocLink
+  reference="https://github.com/flame-engine/flame/blob/v1.8.2/packages/flame/lib/src/timer.dart"
+  label="内部実装"
+/>
+
+## 動かす
+
+`TimerComponent`を使ってみます。
+秒数を`period`に、処理を`onTick`にしています。
+
+まずは繰り返しです。ここでは 1 秒ごとにカウントアップしています。
+繰り返すには`repeat: true`を指定します。
+
+<ExampleCode file="timer/game.dart" label="timer1" />
+
+次に一定時間後に一度だけ処理します。ここではボタンをランダムに動かして、0.5 秒後に停止しています。
+この場合は`repeat: true`は不要です。
+処理し終わったらもう不要になるので `removeOnFinish: true`を指定する方がよいでしょう。
+
+<ExampleCode file="timer/game.dart" label="timer2" />
+
+このようにしてタイマーが使えます。
