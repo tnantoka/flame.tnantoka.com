@@ -1,0 +1,31 @@
+---
+title: HSVカラー
+id: 43
+date: 2023-10-02
+---
+
+import ExampleCode from '../../components/ExampleCode.astro';
+import ExampleLink from '../../components/ExampleLink.astro';
+import DemoAsset from '../../components/DemoAsset.astro';
+import DocLink from '../../components/DocLink.astro';
+
+## HSVColor
+
+`HSVColor` を使うと、HSV 色空間で色を指定できます。
+
+これは Flame ではなく Flutter の機能ですが、カジュアルゲームを作る時にランダムな色を使うことはよくあると思います。
+その際に RGB ではなく HSV で指定すると便利なことがあるので使い方を紹介します。
+
+<DocLink reference="https://api.flutter.dev/flutter/painting/HSVColor-class.html" />
+
+## 表示する
+
+`HSVColor`を使ってみます。
+
+`_h`、`_s`、`_v`の 3 つの変数から `HSVColor`を作り、toColor で RectangleComponent の色を指定しています。
+
+<ExampleCode file="hsv/game.dart" label="hsv" />
+
+変数の値はボタンの変更できるようになっています。
+
+このようにして HSV カラーが使えます。

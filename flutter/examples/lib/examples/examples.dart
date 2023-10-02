@@ -47,6 +47,7 @@ import 'error/page.dart';
 import 'background/page.dart';
 import 'pathfinding/page.dart';
 import 'timer/page.dart';
+import 'hsv/page.dart';
 
 final Map<String, Widget Function(BuildContext)> routes = {
   '/': (context) => const MyHomePage(),
@@ -95,4 +96,5 @@ final Map<String, Widget Function(BuildContext)> routes = {
   '/background': (context) => BackgroundPage(),
   '/pathfinding': (context) => PathfindingPage(),
   '/timer': (context) => TimerPage(),
+  '/hsv': (context) => HSVPage(),
 };
