@@ -1,50 +1,51 @@
-import 'dart:ui';
-
-import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/palette.dart';
+import 'package:flame/extensions.dart';
 import 'package:flame_forge2d/flame_forge2d.dart' hide World;
 
 // <physics3>
-class PhysicsGame extends Forge2DGame with TapDetector {
+class PhysicsGame extends Forge2DGame with TapCallbacks {
   @override
   Future<void> onLoad() async {
     super.onLoad();
 
-    final world = World();
-    final cameraComponent = CameraComponent(world: world);
-    await add(world);
-    await add(cameraComponent);
+    final rect = camera.visibleWorldRect;
 
-    final screen = screenToWorld(cameraComponent.viewport.size);
-
-    await add(Wall(position: Vector2(0, screen.y), size: Vector2(screen.x, 1)));
-    await add(Wall(position: Vector2(0, 0), size: Vector2(1, screen.y)));
-    await add(Wall(position: Vector2(screen.x, 0), size: Vector2(1, screen.y)));
+    await world.add(
+      Wall(pos: rect.bottomLeft.toVector2(), size: Vector2(rect.width, 1)),
+    );
+    await world.add(
+      Wall(pos: rect.topLeft.toVector2(), size: Vector2(1, rect.height)),
+    );
+    await world.add(
+      Wall(pos: rect.topRight.toVector2(), size: Vector2(1, rect.height)),
+    );
   }
 
   @override
-  void onTapDown(TapDownInfo info) {
-    super.onTapDown(info);
+  void onTapDown(TapDownEvent event) {
+    super.onTapDown(event);
 
-    add(Ball(position: info.eventPosition.game));
+    world.add(
+      Ball(pos: screenToWorld(event.localPosition)),
+    );
   }
 }
 // </physics3>
 
 // <physics1>
 class Wall extends BodyComponent {
-  Wall({required this.position, required this.size})
+  Wall({required this.pos, required this.size})
       : super(paint: BasicPalette.gray.paint());
 
-  final Vector2 position;
+  final Vector2 pos;
   final Vector2 size;
 
   @override
   Body createBody() {
-    final shape = PolygonShape()..setAsBoxXY(size.x, size.y);
+    final shape = PolygonShape()..setAsBox(size.x, size.y, pos, 0);
     final fixtureDef = FixtureDef(shape, friction: 0.3);
-    final bodyDef = BodyDef(userData: this, position: position);
+    final bodyDef = BodyDef(userData: this);
     return world.createBody(bodyDef)..createFixture(fixtureDef);
   }
 }
@@ -52,9 +53,9 @@ class Wall extends BodyComponent {
 
 // <physics2>
 class Ball extends BodyComponent {
-  Ball({required this.position});
+  Ball({required this.pos});
 
-  final Vector2 position;
+  final Vector2 pos;
 
   @override
   Body createBody() {
@@ -69,7 +70,7 @@ class Ball extends BodyComponent {
 
     final bodyDef = BodyDef(
       userData: this,
-      position: position,
+      position: pos,
       type: BodyType.dynamic,
     );
 

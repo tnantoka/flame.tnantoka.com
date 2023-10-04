@@ -25,9 +25,10 @@ import DocLink from '../../components/DocLink.astro';
 <ExampleCode file="camera/game.dart" label="camera1" />
 
 次にカメラを設定します。
-`world`と`cameraComponent`を作ってゲームに`add`します。
 
-あとは`map`と`_rect`を`world`に`add`して、`follow`で`cameraComponent`が`_rect`を追いかけるようにします。
+1.9 から `world`、`camera`がデフォルトで用意されるようになったので、自前で作る必要がなくなりました。
+
+`map`と`_rect`を`world`に`add`して、`follow`で`camerat`が`_rect`を追いかけるようにします。
 
 なお、`_rect`は<ExampleLink slug="keyboard_events" />の例で使ったものと同じで、矢印キーで動きます。
 

@@ -11,9 +11,6 @@ class CameraGame extends FlameGame with KeyboardEvents {
   var _vy = 0.0;
   final _speed = 500.0;
 
-  final world = World();
-  late final CameraComponent _cameraComponent;
-
   @override
   Future<void> onLoad() async {
     super.onLoad();
@@ -24,16 +21,11 @@ class CameraGame extends FlameGame with KeyboardEvents {
     );
 
     // <camera2>
-    final world = World();
-    _cameraComponent = CameraComponent(world: world);
-    await add(world);
-    await add(_cameraComponent);
-
     final map = Map();
     world.add(map);
     world.add(_rect);
 
-    _cameraComponent.follow(_rect);
+    camera.follow(_rect);
     // </camera2>
   }
 

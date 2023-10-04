@@ -9,8 +9,7 @@ class TextBoxGame extends FlameGame {
 
     await add(
       TextBoxComponent(
-        position: Vector2(size.x * 0.5, size.y * 0.5),
-        anchor: Anchor.center,
+        position: Vector2(size.x * 0.5 - 100, size.y * 0.5 - 50),
         text: "Hello, World! This is a Flame's TextBox.",
         size: Vector2(200, 100),
         boxConfig: TextBoxConfig(
