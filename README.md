@@ -8,7 +8,7 @@ https://flame.tnantoka.com/
 
 ```
 # Flutter
-$ cd flutter/examples/flutter
+$ cd flutter/examples
 $ flutter run --web-port 5555
 
 # Astro

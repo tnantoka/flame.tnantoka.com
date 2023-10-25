@@ -14,13 +14,13 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
-  flame: ^1.9.1
+  flame: ^1.10.0
 # </hello>
 # <physics>
-  flame_forge2d: ^0.15.0+1
+  flame_forge2d: ^0.15.1
 # </physics>
 # <sound1>
-  flame_audio: ^2.1.1
+  flame_audio: ^2.1.2
 # </sound1>
 # <pathfinding>
   pathfinding: ^3.0.1
