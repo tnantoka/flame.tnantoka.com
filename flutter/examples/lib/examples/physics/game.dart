@@ -1,7 +1,7 @@
 import 'package:flame/events.dart';
 import 'package:flame/palette.dart';
 import 'package:flame/extensions.dart';
-import 'package:flame_forge2d/flame_forge2d.dart' hide World;
+import 'package:flame_forge2d/flame_forge2d.dart';
 
 // <physics3>
 class PhysicsGame extends Forge2DGame with TapCallbacks {
