@@ -1,6 +1,5 @@
 ---
 const { exampleName, exampleEntries } = Astro.props;
-const isProd = import.meta.env.PROD;
 ---
 
 <div
@@ -52,34 +51,12 @@ const isProd = import.meta.env.PROD;
   <div class="mt-1 mb-2 text-center small ad">
     <p class="mb-1">第8章にFlameが載ってる模様</p>
     <div>
-      {
-        isProd ? (
-          <>
-            <a
-              href="https://www.amazon.co.jp/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E5%AF%BE%E5%BF%9C-%E6%9C%80%E6%96%B0%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF-Flutter-3%E5%85%A5%E9%96%80-%E6%8E%8C%E7%94%B0%E6%B4%A5%E8%80%B6%E4%B9%83/dp/4798068527?&linkCode=li3&tag=flutter-flame-22&linkId=cacb268621e90c5aa6f20fb669da0720&language=ja_JP&ref_=as_li_ss_il"
-              target="_blank"
-            >
-              <img
-                border="0"
-                src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4798068527&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=flutter-flame-22&language=ja_JP"
-              />
-            </a>
-            <img
-              src="https://ir-jp.amazon-adsystem.com/e/ir?t=flutter-flame-22&language=ja_JP&l=li3&o=9&a=4798068527"
-              width="1"
-              height="1"
-              border="0"
-              alt=""
-              style="border:none !important; margin:0px !important;"
-              loading="lazy"
-            />
-          </>
-        ) : (
-          <a href="#">
-            <img width="194" height="250" class="bg-secondary-subtle" />
-          </a>
-        )
-      }
+      <a
+        href="https://www.amazon.co.jp/dp/4798068527?&linkCode=ll1&tag=flutter-flame-22&linkId=2f4425a5e2fea26916bb8a35ae278ce5&language=ja_JP&ref_=as_li_ss_tl"
+        target="_blank"
+      >
+        マルチプラットフォーム対応 最新フレームワーク Flutter 3入門
+      </a>
     </div>
   </div>
 </div>
