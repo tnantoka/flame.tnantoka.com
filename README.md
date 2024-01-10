@@ -21,6 +21,8 @@ $ npm run dev
 - https://fonts.google.com/specimen/DotGothic16
 - https://ansimuz.itch.io/warped-space-shooter
 - https://ansimuz.itch.io/spaceship-shooter-environment
+- https://grafxkid.itch.io/sprite-pack-5
+- https://grafxkid.itch.io/mini-fx-items-ui
 
 ## License
 
